@@ -3,16 +3,16 @@
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4, h5 { white-space: pre-wrap; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
@@ -174,7 +174,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
 .outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
 .outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
 .outline-expander:hover::before { content: ""; }
@@ -205,55 +205,98 @@ mark .md-meta { color: rgb(0, 0, 0); }
 mjx-container { break-inside: avoid; }
 
 
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url('file:///Users/kekemao/Library/Application%20Support/abnerworks.Typora/themes/vue/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}@import '';
+
 :root {
-    --side-bar-bg-color: #fafafa;
+    --side-bar-bg-color: #fff;
     --control-text-color: #777;
+    --font-sans-serif: 'Ubuntu', 'Source Sans Pro', sans-serif !important;
+    --font-monospace: 'Fira Code', 'Roboto Mono', monospace !important;
 }
 
-@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
-
-/* open-sans-regular - latin-ext_latin */
-  /* open-sans-italic - latin-ext_latin */
-    /* open-sans-700 - latin-ext_latin */
-    /* open-sans-700italic - latin-ext_latin */
-  html {
+html {
     font-size: 16px;
-    -webkit-font-smoothing: antialiased;
 }
 
 body {
-    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
-    color: rgb(51, 51, 51);
-    line-height: 1.6;
+    font-family: var(--font-sans-serif);
+    color: #34495e;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6rem;
+    letter-spacing: 0;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 #write {
     max-width: 860px;
-  	margin: 0 auto;
-  	padding: 30px;
-    padding-bottom: 100px;
+    margin: 0 auto;
+    padding: 20px 30px 100px;
 }
 
-@media only screen and (min-width: 1400px) {
-	#write {
-		max-width: 1024px;
-	}
+#write p {
+    line-height: 1.6rem;
+    word-spacing: .05rem;
 }
 
-@media only screen and (min-width: 1800px) {
-	#write {
-		max-width: 1200px;
-	}
+#write ol li {
+    padding-left: 0.5rem;
 }
 
 #write > ul:first-child,
-#write > ol:first-child{
+#write > ol:first-child {
     margin-top: 30px;
 }
 
-a {
-    color: #4183C4;
+body > *:first-child {
+    margin-top: 0 !important;
 }
+
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+a {
+    color: #42b983;
+    font-weight: 600;
+    padding: 0 2px;
+    text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -267,6 +310,7 @@ h6 {
     line-height: 1.4;
     cursor: text;
 }
+
 h1:hover a.anchor,
 h2:hover a.anchor,
 h3:hover a.anchor,
@@ -275,84 +319,89 @@ h5:hover a.anchor,
 h6:hover a.anchor {
     text-decoration: none;
 }
+
 h1 tt,
 h1 code {
-    font-size: inherit;
+    font-size: inherit !important;
 }
+
 h2 tt,
 h2 code {
-    font-size: inherit;
+    font-size: inherit !important;
 }
+
 h3 tt,
 h3 code {
-    font-size: inherit;
+    font-size: inherit !important;
 }
+
 h4 tt,
 h4 code {
-    font-size: inherit;
+    font-size: inherit !important;
 }
+
 h5 tt,
 h5 code {
-    font-size: inherit;
+    font-size: inherit !important;
 }
+
 h6 tt,
 h6 code {
-    font-size: inherit;
+    font-size: inherit !important;
 }
+
+h2 a,
+h3 a {
+    color: #34495e;
+}
+
 h1 {
-    font-size: 2.25em;
-    line-height: 1.2;
-    border-bottom: 1px solid #eee;
+    padding-bottom: .4rem;
+    font-size: 2.2rem;
+    line-height: 1.3;
 }
+
 h2 {
-    font-size: 1.75em;
+    font-size: 1.75rem;
     line-height: 1.225;
-    border-bottom: 1px solid #eee;
+    margin: 35px 0 15px;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
 }
-
-/*@media print {
-    .typora-export h1,
-    .typora-export h2 {
-        border-bottom: none;
-        padding-bottom: initial;
-    }
-
-    .typora-export h1::after,
-    .typora-export h2::after {
-        content: "";
-        display: block;
-        height: 100px;
-        margin-top: -96px;
-        border-top: 1px solid #eee;
-    }
-}*/
 
 h3 {
-    font-size: 1.5em;
+    font-size: 1.4rem;
     line-height: 1.43;
+    margin: 20px 0 7px;
 }
+
 h4 {
-    font-size: 1.25em;
+    font-size: 1.2rem;
 }
+
 h5 {
-    font-size: 1em;
+    font-size: 1rem;
 }
+
 h6 {
-   font-size: 1em;
+    font-size: 1rem;
     color: #777;
 }
+
 p,
 blockquote,
 ul,
 ol,
 dl,
-table{
+table {
     margin: 0.8em 0;
 }
-li>ol,
-li>ul {
+
+li > ol,
+li > ul {
     margin: 0 0;
 }
+
 hr {
     height: 2px;
     padding: 0;
@@ -363,115 +412,219 @@ hr {
     box-sizing: content-box;
 }
 
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+
 li p.first {
     display: inline-block;
 }
+
 ul,
 ol {
     padding-left: 30px;
 }
+
 ul:first-child,
 ol:first-child {
     margin-top: 0;
 }
+
 ul:last-child,
 ol:last-child {
     margin-bottom: 0;
 }
+
 blockquote {
-    border-left: 4px solid #dfe2e5;
-    padding: 0 15px;
-    color: #777777;
+    border-left: 4px solid #42b983;
+    padding: 10px 15px;
+    color: #777;
+    background-color: rgba(66, 185, 131, .1);
 }
-blockquote blockquote {
-    padding-right: 0;
-}
+
 table {
     padding: 0;
     word-break: initial;
 }
+
 table tr {
-    border: 1px solid #dfe2e5;
+    border-top: 1px solid #dfe2e5;
     margin: 0;
     padding: 0;
 }
+
 table tr:nth-child(2n),
 thead {
-    background-color: #f8f8f8;
+    background-color: #fafafa;
 }
-table th {
+
+table tr th {
     font-weight: bold;
     border: 1px solid #dfe2e5;
     border-bottom: 0;
+    text-align: left;
     margin: 0;
     padding: 6px 13px;
 }
-table td {
+
+table tr td {
     border: 1px solid #dfe2e5;
+    text-align: left;
     margin: 0;
     padding: 6px 13px;
 }
-table th:first-child,
-table td:first-child {
+
+table tr th:first-child,
+table tr td:first-child {
     margin-top: 0;
 }
-table th:last-child,
-table td:last-child {
+
+table tr th:last-child,
+table tr td:last-child {
     margin-bottom: 0;
 }
 
-.CodeMirror-lines {
-    padding-left: 4px;
+#write strong {
+    padding: 0 1px;
 }
 
-.code-tooltip {
-    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
-    border-top: 1px solid #eef2f2;
+#write em {
+    padding: 0 5px 0 2px;
 }
 
-.md-fences,
-code,
-tt {
-    border: 1px solid #e7eaed;
+#write table thead th {
+    background-color: #f2f2f2;
+}
+
+#write .CodeMirror-gutters {
+    border-right: none;
+}
+
+#write .md-fences {
+    border: 1px solid #F4F4F4;
+    -webkit-font-smoothing: initial;
+    margin: 0.8rem 0 !important;
+    padding: 0.3rem 0 !important;
+    line-height: 1.43rem;
+    background-color: #F8F8F8 !important;
+    border-radius: 2px;
+    font-family: var(--font-monospace);
+    font-size: 0.85rem;
+    word-wrap: normal;
+}
+
+#write .CodeMirror-wrap .CodeMirror-code pre {
+    padding-left: 12px;
+}
+
+#write code, tt {
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-family: var(--font-monospace);
+    font-size: 0.92rem;
+    color: #e96900;
     background-color: #f8f8f8;
-    border-radius: 3px;
-    padding: 0;
-    padding: 2px 4px 0px 4px;
-    font-size: 0.9em;
 }
 
-code {
-    background-color: #f3f4f4;
-    padding: 0 2px 0 2px;
+tt {
+    margin: 0 2px;
 }
 
-.md-fences {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding-top: 8px;
-    padding-bottom: 6px;
+#write .md-footnote {
+    background-color: #f8f8f8;
+    color: #e96900;
 }
 
+/* heighlight. */
+#write mark {
+    background-color: #EBFFEB;
+    border-radius: 2px;
+    padding: 2px 4px;
+    margin: 0 2px;
+    color: #222;
+    font-weight: 500;
+}
+
+#write del {
+    padding: 1px 2px;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #22a2c9;
+}
+
+.cm-s-inner .cm-string {
+    color: #22a2c9;
+}
 
 .md-task-list-item > input {
-  margin-left: -1.3em;
+    margin-left: -1.3em;
 }
 
 @media print {
     html {
         font-size: 13px;
     }
+
+    table,
     pre {
         page-break-inside: avoid;
+    }
+
+    pre {
         word-wrap: break-word;
     }
 }
 
 .md-fences {
-	background-color: #f8f8f8;
+    background-color: #f8f8f8;
 }
+
+.md-diagram-panel {
+    position: static !important;
+}
+
 #write pre.md-meta-block {
-	padding: 1rem;
+    padding: 1rem;
     font-size: 85%;
     line-height: 1.45;
     background-color: #f7f7f7;
@@ -481,46 +634,45 @@ code {
     margin-top: 0 !important;
 }
 
-.mathjax-block>.code-tooltip {
-	bottom: .375rem;
+.mathjax-block > .code-tooltip {
+    bottom: .375rem;
 }
 
-.md-mathjax-midline {
-    background: #fafafa;
+#write > h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
 }
 
-#write>h3.md-focus:before{
-	left: -1.5625rem;
-	top: .375rem;
+#write > h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
 }
-#write>h4.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
+
+#write > h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
 }
-#write>h5.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
+
+#write > h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
 }
-#write>h6.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-.md-image>.md-meta {
-    /*border: 1px solid #ddd;*/
+
+.md-image > .md-meta {
     border-radius: 3px;
-    padding: 2px 0px 0px 4px;
+    font-family: var(--font-monospace);
+    padding: 2px 0 0 4px;
     font-size: 0.9em;
     color: inherit;
 }
 
 .md-tag {
-    color: #a7a7a7;
-    opacity: 1;
+    color: inherit;
 }
 
-.md-toc { 
-    margin-top:20px;
-    padding-bottom:20px;
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
 }
 
 .sidebar-tabs {
@@ -539,22 +691,29 @@ code {
     border-width: 1px;
 }
 
+#md-notification:before {
+    top: 10px;
+}
+
 /** focus mode */
+
 .on-focus-mode blockquote {
     border-left-color: rgba(85, 85, 85, 0.12);
 }
 
-header, .context-menu, .megamenu-content, footer{
-    font-family: "Segoe UI", "Arial", sans-serif;
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: var(--font-sans-serif);
 }
 
 .file-node-content:hover .file-node-icon,
-.file-node-content:hover .file-node-open-state{
+.file-node-content:hover .file-node-open-state {
     visibility: visible;
 }
 
 .mac-seamless-mode #typora-sidebar {
-    background-color: #fafafa;
     background-color: var(--side-bar-bg-color);
 }
 
@@ -562,31 +721,8 @@ header, .context-menu, .megamenu-content, footer{
     color: #b4654d;
 }
 
-/*.html-for-mac {
+.html-for-mac .context-menu {
     --item-hover-bg-color: #E6F0FE;
-}*/
-
-#md-notification .btn {
-    border: 0;
-}
-
-.dropdown-menu .divider {
-    border-color: #e5e5e5;
-    opacity: 0.4;
-}
-
-.ty-preferences .window-content {
-    background-color: #fafafa;
-}
-
-.ty-preferences .nav-group-item.active {
-    color: white;
-    background: #999;
-}
-
-.menu-item-container a.menu-style-btn {
-    background-color: #f5f8fa;
-    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
 }
 
 
@@ -594,6 +730,6 @@ header, .context-menu, .megamenu-content, footer{
 </style><title>SOUNDPEATS_QA_en</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=' first-line-indent'><h3 id='troubleshooting'><span>Troubleshooting</span></h3><blockquote><ol start='' ><li><p>🔖<span> </span><a href='#1-not-booting-or-not-working'><span>Not booting or not working problem</span></a></p></li><li><p>🔖<span> </span><a href='#2-question-about-charging'><span>Questions about charging</span></a></p></li><li><p>🔖<span> </span><a href='#3-rf-problem-bluetooth-signal'><span>RF problem (Bluetooth signal)</span></a></p></li><li><p>🔖<span> </span><a href='#4-wearing-problems-such-as-easy-to-fall-off-comfort-etc'><span>Wearing problems (such as easy to fall off, comfort, etc.)</span></a></p></li><li><p>🔖<span> </span><a href='#5-sound-quality-problem'><span>Sound quality problem</span></a></p></li><li><p>🔖<span> </span><a href='#6-battery-life-problem'><span>Battery life problem</span></a></p></li><li><p>🔖<span> </span><a href='#7-call-problem-third-party-software-call'><span>Call problem (third-party software call)</span></a></p></li><li><p>🔖<span> </span><a href='#8-there-is-no-sound-in-one-ear-and-the-volume-is-low'><span>There is no sound in one ear and the volume is low</span></a></p></li><li><p>🔖<span> </span><a href='#9-connection-issues'><span>Connection issues</span></a></p></li><li><p>🔖<span> </span><a href='#10-current-sound-floor-noise-problem'><span>Current sound, floor noise problem</span></a></p></li><li><p>🔖<span> </span><a href='#11-headphone-not-pairing-problem'><span>Headphone not pairing problem</span></a></p></li><li><p>🔖<span> </span><a href='#12-touch-button-problem'><span>Touch, button problem</span></a></p></li><li><p>🔖<span> </span><a href='#13-noise-reduction-problem'><span>Noise reduction problem</span></a></p></li><li><p>🔖<span> </span><a href='#14-app-connection-problem'><span>APP connection problem</span></a></p></li><li><p>🔖<span> </span><a href='#15-app-upgrade-problem'><span>APP upgrade problem</span></a></p></li></ol></blockquote><p>&nbsp;</p><h4 id='1-not-booting-or-not-working'><span>1. Not booting or not working</span></h4><ol start='' ><li><p><span>Please confirm whether the charger &amp; charging cable can work normally.</span></p></li><li><p><span>If the headset is left for too long, it is recommended to extend the charging time appropriately, and it is recommended to be 30 minutes + (battery protection needs to be activated).</span></p></li><li><p><span>Please reset the earphones (if the software crashes, enters the DUT mode by mistake, does not match with each other, etc.).</span></p></li><li><p><span>Please confirm whether the headset can be turned on manually (check whether it is valid according to the function of the touch key).</span></p></li><li><p><span>Please check whether the left and right earphones are paired (after unpairing, one earphone works and the other earphone does not work).</span></p></li><li><p><span>If the indicator light of the headset is broken, making it impossible to judge whether to turn it on, you need to connect the device to confirm whether there is sound.</span></p></li></ol><h4 id='2-question-about-charging'><span>2. Question about charging</span></h4><ol start='' ><li><p><span>Please confirm whether the charger or charging cable can work normally.</span></p></li><li><p><span>If the earphones are left for a long time, it is recommended to extend the charging time appropriately, 30 minutes+ is recommended (because the battery protection needs to be activated).</span></p></li><li><p><span>Please use a charging head or charging cable that meets the earphone specifications (if the voltage is too high, there will be charging protection, if the current is less than 1A, the charging will be slow).</span></p></li><li><p><span>Please check whether the indicator lights of the headset and the charging box are normal.</span></p></li><li><p><span>Please confirm whether the earphones have entered water (the charging box is generally not waterproof).</span></p></li><li><p><span>Please regularly clean the charging box USB socket, shrapnel and earphone charging copper pillar.</span></p></li><li><p><span>The headset itself is faulty, the circuit is faulty or the battery is faulty, causing it not to charge.</span></p></li></ol><h4 id='3-rf-problem-bluetooth-signal'><span>3. RF problem (Bluetooth signal)</span></h4><ol start='' ><li><p><span>Please confirm whether there is 2.4GHz signal interference around, such as WIFI, microwave ovens, drones and other wireless remote control devices will have a certain impact on Bluetooth signals.</span></p></li><li><p><span>Please confirm the location of the bluetooth device (please put the bluetooth device as close as possible to the headset antenna):</span></p><ul><li><p><span>When holding a Bluetooth device, it is recommended to confirm the location of the Bluetooth antenna of the Bluetooth device and avoid holding the Bluetooth antenna of the Bluetooth device.</span></p></li><li><p><span>If the phone is pocketed, it is recommended to put the phone in the front pocket on the same side as the headset antenna.</span></p></li><li><p><span>Put the Bluetooth device on the table. It is recommended that there be no obstacles between the Bluetooth device and the headset, and try to keep the Bluetooth device and the headset antenna free of physical obstruction.</span></p></li></ul></li><li><p><span>Please place the Bluetooth transmitting device as high as possible, and it is not recommended to place it on the ground.</span></p></li><li><p><span>TWS earphones, you can try to reset, master and slave pairing and other operations.</span></p></li></ol><h4 id='4-wearing-problems-such-as-easy-to-fall-off-comfort-etc'><span>4. Wearing problems (such as easy to fall off, comfort, etc.)</span></h4><ol start='' ><li><p><span>The product is designed with different sizes of ear caps and ear fins for different human ear characteristics. Try different sizes of ear caps and ear fins. Pay attention to try to match the ear caps and ear fins. This problem can basically be solved.</span></p></li><li><p><span>The noise-canceling earphones used round ear caps in the early stage, such as SOUNDPEATS T2, SOUNDPEATS T3 and other earphones. From SOUNDPEATS Air3 Pro, SOUNDPEATS Mini Pro and other earphones to increase the noise-canceling function of earphones, the use of oval ear caps is relatively oval. Ear caps seal and fit better than round ones.</span></p></li></ol><h4 id='5-sound-quality-problem'><span>5. Sound quality problem</span></h4><ol start='' ><li><p><span>Insufficient bass:</span></p><p><span>It is recommended to try different sizes of ear caps and ear fins to ensure that the earphones are well sealed with your ears and there is no sound leakage, which can solve the problem of insufficient bass.</span></p></li><li><p><span>The sound is not loud enough:</span></p><ul><li><p><span>For IOS devices, it is recommended to turn up the volume of the Bluetooth device or the headset.</span></p></li><li><p><span>For Android devices, it is recommended to simultaneously increase the volume of the Bluetooth device and the headset.</span></p></li><li><p><span>Excessive volume will cause irreparable damage to the human ear, so the earphone has a limit on the maximum volume of the earphone to prevent the earphone from damaging the human ear.</span></p></li></ul></li></ol><ol start='3' ><li><p><span>Loud sound problem:</span></p><ul><li><p><span>For IOS devices, it is recommended to turn down the volume of the Bluetooth device or the headset.</span></p></li><li><p><span>For Android devices, it is recommended to lower the volume of the Bluetooth device and the headset simultaneously.</span></p></li><li><p><span>If the above still cannot meet the needs, you can try to use small ear caps and ear fins to reduce the fit between the earphones and the human ear to adjust the sound volume.</span></p></li></ul></li></ol><ol start='4' ><li><p><span>Noise or noise problem:</span></p><ul><li><p><span>Please confirm whether the noise or noise problem is caused by RF problems. For the confirmation method, see RF Problems above.</span></p></li><li><p><span>For IOS devices, it is recommended to turn up the volume of the Bluetooth device or the headset.</span></p></li><li><p><span>For Android devices, it is recommended to simultaneously increase the volume of the     Bluetooth device and the headset.</span></p></li></ul></li></ol><h4 id='6-battery-life-problem'><span>6. Battery life problem</span></h4><ol start='' ><li><p><span>Please ensure that the earphones have sufficient power (there may be a virtual power situation, you can check the actual power by connecting to the APP).</span></p></li><li><p><span>Please confirm whether the volume is too loud, or factors such as continuous playing of explosive music will shorten the battery life.</span></p></li><li><p><span>The battery life is different due to the different modes used. The ANC / transparent mode is relatively short, and the normal mode has a long battery life (AAC or SBC).</span></p></li><li><p><span>Using different audio decoding modes will affect battery life, such as LDAC, APTX, SBC, AAC.</span></p></li><li><p><span>Develop the habit of charging the earphones after use. If you do not use them for a long time, please charge them once every 3 months.</span></p></li></ol><h4 id='7-call-problem-third-party-software-call'><span>7. Call problem (third-party software call)</span></h4><ol start='' ><li><p><span>It is recommended to choose an appropriate and quiet environment for Bluetooth calls (please try to avoid using it in environments such as noisy streets or shopping malls with many people).</span></p></li><li><p><span>It is recommended to keep the mouth and the MIC as close as possible when making a Bluetooth call (please try to avoid the wire control from going around the back of the neck, etc.).</span></p></li><li><p><span>It is recommended to avoid the obstruction of clothing or accessories between the mouth and the MIC.</span></p></li><li><p><span>Please check if the MIC hole is blocked.</span></p></li><li><p><span>If the other party&#39;s mobile phone has interference or signal problems, the call will be affected (the mobile phone will switch to narrowband if the signal is poor).</span></p></li><li><p><span>Call echo: If the earphone hears an echo, it means that the other party’s device is faulty; if the other party hears an echo, it means that the earphone is faulty.</span></p></li></ol><h4 id='8-there-is-no-sound-in-one-ear-and-the-volume-is-low'><span>8. There is no sound in one ear and the volume is low</span></h4><ol start='' ><li><p><span>For wired earphones with no sound in one ear, please confirm whether the 3.5mm plug is fully inserted.</span></p></li><li><p><span>If the wired bluetooth cannot be ruled out, try to reset and rule out software factors.</span></p></li><li><p><span>For TWS earphones, please confirm whether the left and right earphones are paired successfully, and re-pair according to the instructions.</span></p></li><li><p><span>Please confirm whether the volume of the earphone is out of sync with the device (you can try to maximize the earphone and then adjust the volume of the device).</span></p></li></ol><h4 id='9-connection-issues'><span>9. Connection issues</span></h4><ol start='' ><li><p><span>You can delete the device connection information, reset the headset, and confirm to enter the pairing state.</span></p></li><li><p><span>Then connect normally according to the product manual to confirm whether it can be connected.</span></p></li><li><p><span>If the connection is still not possible, it is recommended to replace the Bluetooth device, repeat the first and second points above, and then confirm whether it can be connected.</span></p></li><li><p><span>For TWS earphones, please confirm whether the power of the left and right earphones is sufficient, and you can try to reset and match the main and auxiliary devices.</span></p></li><li><p><span>Avoid connecting in an environment with a lot of interference, you can find a closed environment to connect.</span></p></li></ol><h4 id='10-current-sound-floor-noise-problem'><span>10. Current sound, floor noise problem</span></h4><ol start='' ><li><p><span>It is recommended to choose an environment with weak signal interference to confirm whether the current sound and background noise exist.</span></p></li><li><p><span>It is recommended to confirm whether there is current sound and background noise in a relatively quiet environment.</span></p></li><li><p><span>For the call current, check whether there is a problem with the other party&#39;s device.</span></p></li></ol><h4 id='11-headphone-not-pairing-problem'><span>11. Headphone not pairing problem</span></h4><ol start='' ><li><p><span>Please delete the connection record in the device, clear the left and right earphone pairing, mutual pairing information, power on and re-pair.</span></p></li></ol><h4 id='12-touch-button-problem'><span>12. Touch, button problem</span></h4><ol start='' ><li><p><span>Improper operation of the touch button leads to failure to recognize it. (For example: double-click, the interval time can not be too fast or too slow).</span></p></li><li><p><span>The touch area is wrong, please read the manual carefully to understand the touch area.</span></p></li><li><p><span>Some functions of the video player are not compatible with the control.</span></p></li></ol><h4 id='13-noise-reduction-problem'><span>13. Noise reduction problem</span></h4><ol start='' ><li><p><span>Please check the front chamber, rear chamber, front nozzle and mesh cloth for foreign objects that cause blockage.</span></p></li><li><p><span>Please check whether the earphones are sealed and in good condition.</span></p></li><li><p><span>Please check whether the ear cap specification matches the ear.</span></p></li><li><p><span>Please test in a quiet environment. At present, the earphones in ANC mode in the market have noise floor problems. When ANC or transparent mode is turned on, a slight noise floor is acceptable.</span></p></li></ol><h4 id='14-app-connection-problem'><span>14. APP connection problem</span></h4><ol start='' ><li><p><span>For Apple mobile phones, you can turn off and then turn on the Bluetooth switch button in the mobile phone system, or reset the headset, then cross out the APP (clear the process of the APP), reopen the APP, and then connect according to the original method.</span></p></li><li><p><span>For Android mobile phones, please confirm whether the positioning function of the mobile phone itself is turned on, and whether the App positioning permission is granted. If you use the Xiaomi MIUI system, please do not grant blank permissions, reset the headset, and then reconnect.</span></p></li></ol><h4 id='15-app-upgrade-problem'><span>15. APP upgrade problem</span></h4><ol start='' ><li><p><span>Do not disconnect or play music, answer videos and calls during installation.</span></p></li><li><p><span>Do not put the earphones into the charging case.</span></p></li><li><p><span>Keep the headset within 0.5m from the phone.</span></p></li><li><p><span>Please don&#39;t let the phone screen go black.</span></p></li><li><p><span>If the upgrade fails, please reset the headset and connect to the APP again to upgrade.</span></p></li></ol><h4 id='-back-to-toptroubleshooting'>⬆️<span> </span><a href='#troubleshooting'><span>Back to Top</span></a></h4></div></div>
+<div id='write'  class=' first-line-indent'><h3><span>Troubleshooting</span></h3><blockquote><ol start='' ><li><p>🔖<span> </span><a href='#1-not-booting-or-not-working'><span>Not booting or not working problem</span></a></p></li><li><p>🔖<span> </span><a href='#2-question-about-charging'><span>Questions about charging</span></a></p></li><li><p>🔖<span> </span><a href='#3-rf-problem-bluetooth-signal'><span>RF problem (Bluetooth signal)</span></a></p></li><li><p>🔖<span> </span><a href='#4-wearing-problems-such-as-easy-to-fall-off-comfort-etc'><span>Wearing problems (such as easy to fall off, comfort, etc.)</span></a></p></li><li><p>🔖<span> </span><a href='#5-sound-quality-problem'><span>Sound quality problem</span></a></p></li><li><p>🔖<span> </span><a href='#6-battery-life-problem'><span>Battery life problem</span></a></p></li><li><p>🔖<span> </span><a href='#7-call-problem-third-party-software-call'><span>Call problem (third-party software call)</span></a></p></li><li><p>🔖<span> </span><a href='#8-there-is-no-sound-in-one-ear-and-the-volume-is-low'><span>There is no sound in one ear and the volume is low</span></a></p></li><li><p>🔖<span> </span><a href='#9-connection-issues'><span>Connection issues</span></a></p></li><li><p>🔖<span> </span><a href='#10-current-sound-floor-noise-problem'><span>Current sound, floor noise problem</span></a></p></li><li><p>🔖<span> </span><a href='#11-headphone-not-pairing-problem'><span>Headphone not pairing problem</span></a></p></li><li><p>🔖<span> </span><a href='#12-touch-button-problem'><span>Touch, button problem</span></a></p></li><li><p>🔖<span> </span><a href='#13-noise-reduction-problem'><span>Noise reduction problem</span></a></p></li><li><p>🔖<span> </span><a href='#14-app-connection-problem'><span>APP connection problem</span></a></p></li><li><p>🔖<span> </span><a href='#15-app-upgrade-problem'><span>APP upgrade problem</span></a></p></li></ol></blockquote><p>&nbsp;</p><h4 id='1-not-booting-or-not-working'><span>1. Not booting or not working</span></h4><ol start='' ><li><p><span>Please confirm whether the charger &amp; charging cable can work normally.</span></p></li><li><p><span>If the headset is left for too long, it is recommended to extend the charging time appropriately, and it is recommended to be 30 minutes + (battery protection needs to be activated).</span></p></li><li><p><span>Please reset the earphones (if the software crashes, enters the DUT mode by mistake, does not match with each other, etc.).</span></p></li><li><p><span>Please confirm whether the headset can be turned on manually (check whether it is valid according to the function of the touch key).</span></p></li><li><p><span>Please check whether the left and right earphones are paired (after unpairing, one earphone works and the other earphone does not work).</span></p></li><li><p><span>If the indicator light of the headset is broken, making it impossible to judge whether to turn it on, you need to connect the device to confirm whether there is sound.</span></p></li></ol><h4 id='2-question-about-charging'><span>2. Question about charging</span></h4><ol start='' ><li><p><span>Please confirm whether the charger or charging cable can work normally.</span></p></li><li><p><span>If the earphones are left for a long time, it is recommended to extend the charging time appropriately, 30 minutes+ is recommended (because the battery protection needs to be activated).</span></p></li><li><p><span>Please use a charging head or charging cable that meets the earphone specifications (if the voltage is too high, there will be charging protection, if the current is less than 1A, the charging will be slow).</span></p></li><li><p><span>Please check whether the indicator lights of the headset and the charging box are normal.</span></p></li><li><p><span>Please confirm whether the earphones have entered water (the charging box is generally not waterproof).</span></p></li><li><p><span>Please regularly clean the charging box USB socket, shrapnel and earphone charging copper pillar.</span></p></li><li><p><span>The headset itself is faulty, the circuit is faulty or the battery is faulty, causing it not to charge.</span></p></li></ol><h4 id='3-rf-problem-bluetooth-signal'><span>3. RF problem (Bluetooth signal)</span></h4><ol start='' ><li><p><span>Please confirm whether there is 2.4GHz signal interference around, such as WIFI, microwave ovens, drones and other wireless remote control devices will have a certain impact on Bluetooth signals.</span></p></li><li><p><span>Please confirm the location of the bluetooth device (please put the bluetooth device as close as possible to the headset antenna):</span></p><ul><li><p><span>When holding a Bluetooth device, it is recommended to confirm the location of the Bluetooth antenna of the Bluetooth device and avoid holding the Bluetooth antenna of the Bluetooth device.</span></p></li><li><p><span>If the phone is pocketed, it is recommended to put the phone in the front pocket on the same side as the headset antenna.</span></p></li><li><p><span>Put the Bluetooth device on the table. It is recommended that there be no obstacles between the Bluetooth device and the headset, and try to keep the Bluetooth device and the headset antenna free of physical obstruction.</span></p></li></ul></li><li><p><span>Please place the Bluetooth transmitting device as high as possible, and it is not recommended to place it on the ground.</span></p></li><li><p><span>TWS earphones, you can try to reset, master and slave pairing and other operations.</span></p></li></ol><h4 id='4-wearing-problems-such-as-easy-to-fall-off-comfort-etc'><span>4. Wearing problems (such as easy to fall off, comfort, etc.)</span></h4><ol start='' ><li><p><span>The product is designed with different sizes of ear caps and ear fins for different human ear characteristics. Try different sizes of ear caps and ear fins. Pay attention to try to match the ear caps and ear fins. This problem can basically be solved.</span></p></li><li><p><span>The noise-canceling earphones used round ear caps in the early stage, such as SOUNDPEATS T2, SOUNDPEATS T3 and other earphones. From SOUNDPEATS Air3 Pro, SOUNDPEATS Mini Pro and other earphones to increase the noise-canceling function of earphones, the use of oval ear caps is relatively oval. Ear caps seal and fit better than round ones.</span></p></li></ol><h4 id='5-sound-quality-problem'><span>5. Sound quality problem</span></h4><ol start='' ><li><p><span>Insufficient bass:</span></p><p><span>It is recommended to try different sizes of ear caps and ear fins to ensure that the earphones are well sealed with your ears and there is no sound leakage, which can solve the problem of insufficient bass.</span></p></li><li><p><span>The sound is not loud enough:</span></p><ul><li><p><span>For IOS devices, it is recommended to turn up the volume of the Bluetooth device or the headset.</span></p></li><li><p><span>For Android devices, it is recommended to simultaneously increase the volume of the Bluetooth device and the headset.</span></p></li><li><p><span>Excessive volume will cause irreparable damage to the human ear, so the earphone has a limit on the maximum volume of the earphone to prevent the earphone from damaging the human ear.</span></p></li></ul></li></ol><ol start='3' ><li><p><span>Loud sound problem:</span></p><ul><li><p><span>For IOS devices, it is recommended to turn down the volume of the Bluetooth device or the headset.</span></p></li><li><p><span>For Android devices, it is recommended to lower the volume of the Bluetooth device and the headset simultaneously.</span></p></li><li><p><span>If the above still cannot meet the needs, you can try to use small ear caps and ear fins to reduce the fit between the earphones and the human ear to adjust the sound volume.</span></p></li></ul></li></ol><ol start='4' ><li><p><span>Noise or noise problem:</span></p><ul><li><p><span>Please confirm whether the noise or noise problem is caused by RF problems. For the confirmation method, see RF Problems above.</span></p></li><li><p><span>For IOS devices, it is recommended to turn up the volume of the Bluetooth device or the headset.</span></p></li><li><p><span>For Android devices, it is recommended to simultaneously increase the volume of the     Bluetooth device and the headset.</span></p></li></ul></li></ol><h4 id='6-battery-life-problem'><span>6. Battery life problem</span></h4><ol start='' ><li><p><span>Please ensure that the earphones have sufficient power (there may be a virtual power situation, you can check the actual power by connecting to the APP).</span></p></li><li><p><span>Please confirm whether the volume is too loud, or factors such as continuous playing of explosive music will shorten the battery life.</span></p></li><li><p><span>The battery life is different due to the different modes used. The ANC / transparent mode is relatively short, and the normal mode has a long battery life (AAC or SBC).</span></p></li><li><p><span>Using different audio decoding modes will affect battery life, such as LDAC, APTX, SBC, AAC.</span></p></li><li><p><span>Develop the habit of charging the earphones after use. If you do not use them for a long time, please charge them once every 3 months.</span></p></li></ol><h4 id='7-call-problem-third-party-software-call'><span>7. Call problem (third-party software call)</span></h4><ol start='' ><li><p><span>It is recommended to choose an appropriate and quiet environment for Bluetooth calls (please try to avoid using it in environments such as noisy streets or shopping malls with many people).</span></p></li><li><p><span>It is recommended to keep the mouth and the MIC as close as possible when making a Bluetooth call (please try to avoid the wire control from going around the back of the neck, etc.).</span></p></li><li><p><span>It is recommended to avoid the obstruction of clothing or accessories between the mouth and the MIC.</span></p></li><li><p><span>Please check if the MIC hole is blocked.</span></p></li><li><p><span>If the other party&#39;s mobile phone has interference or signal problems, the call will be affected (the mobile phone will switch to narrowband if the signal is poor).</span></p></li><li><p><span>Call echo: If the earphone hears an echo, it means that the other party’s device is faulty; if the other party hears an echo, it means that the earphone is faulty.</span></p></li></ol><h4 id='8-there-is-no-sound-in-one-ear-and-the-volume-is-low'><span>8. There is no sound in one ear and the volume is low</span></h4><ol start='' ><li><p><span>For wired earphones with no sound in one ear, please confirm whether the 3.5mm plug is fully inserted.</span></p></li><li><p><span>If the wired bluetooth cannot be ruled out, try to reset and rule out software factors.</span></p></li><li><p><span>For TWS earphones, please confirm whether the left and right earphones are paired successfully, and re-pair according to the instructions.</span></p></li><li><p><span>Please confirm whether the volume of the earphone is out of sync with the device (you can try to maximize the earphone and then adjust the volume of the device).</span></p></li></ol><h4 id='9-connection-issues'><span>9. Connection issues</span></h4><ol start='' ><li><p><span>You can delete the device connection information, reset the headset, and confirm to enter the pairing state.</span></p></li><li><p><span>Then connect normally according to the product manual to confirm whether it can be connected.</span></p></li><li><p><span>If the connection is still not possible, it is recommended to replace the Bluetooth device, repeat the first and second points above, and then confirm whether it can be connected.</span></p></li><li><p><span>For TWS earphones, please confirm whether the power of the left and right earphones is sufficient, and you can try to reset and match the main and auxiliary devices.</span></p></li><li><p><span>Avoid connecting in an environment with a lot of interference, you can find a closed environment to connect.</span></p></li></ol><h4 id='10-current-sound-floor-noise-problem'><span>10. Current sound, floor noise problem</span></h4><ol start='' ><li><p><span>It is recommended to choose an environment with weak signal interference to confirm whether the current sound and background noise exist.</span></p></li><li><p><span>It is recommended to confirm whether there is current sound and background noise in a relatively quiet environment.</span></p></li><li><p><span>For the call current, check whether there is a problem with the other party&#39;s device.</span></p></li></ol><h4 id='11-headphone-not-pairing-problem'><span>11. Headphone not pairing problem</span></h4><ol start='' ><li><p><span>Please delete the connection record in the device, clear the left and right earphone pairing, mutual pairing information, power on and re-pair.</span></p></li></ol><h4 id='12-touch-button-problem'><span>12. Touch, button problem</span></h4><ol start='' ><li><p><span>Improper operation of the touch button leads to failure to recognize it. (For example: double-click, the interval time can not be too fast or too slow).</span></p></li><li><p><span>The touch area is wrong, please read the manual carefully to understand the touch area.</span></p></li><li><p><span>Some functions of the video player are not compatible with the control.</span></p></li></ol><h4 id='13-noise-reduction-problem'><span>13. Noise reduction problem</span></h4><ol start='' ><li><p><span>Please check the front chamber, rear chamber, front nozzle and mesh cloth for foreign objects that cause blockage.</span></p></li><li><p><span>Please check whether the earphones are sealed and in good condition.</span></p></li><li><p><span>Please check whether the ear cap specification matches the ear.</span></p></li><li><p><span>Please test in a quiet environment. At present, the earphones in ANC mode in the market have noise floor problems. When ANC or transparent mode is turned on, a slight noise floor is acceptable.</span></p></li></ol><h4 id='14-app-connection-problem'><span>14. APP connection problem</span></h4><ol start='' ><li><p><span>For Apple mobile phones, you can turn off and then turn on the Bluetooth switch button in the mobile phone system, or reset the headset, then cross out the APP (clear the process of the APP), reopen the APP, and then connect according to the original method.</span></p></li><li><p><span>For Android mobile phones, please confirm whether the positioning function of the mobile phone itself is turned on, and whether the App positioning permission is granted. If you use the Xiaomi MIUI system, please do not grant blank permissions, reset the headset, and then reconnect.</span></p></li></ol><h4 id='15-app-upgrade-problem'><span>15. APP upgrade problem</span></h4><ol start='' ><li><p><span>Do not disconnect or play music, answer videos and calls during installation.</span></p></li><li><p><span>Do not put the earphones into the charging case.</span></p></li><li><p><span>Keep the headset within 0.5m from the phone.</span></p></li><li><p><span>Please don&#39;t let the phone screen go black.</span></p></li><li><p><span>If the upgrade fails, please reset the headset and connect to the APP again to upgrade.</span></p></li></ol><h4 id='-back-to-top'>⬆️<span> </span><a href='###Troubleshooting'><span>Back to Top</span></a></h4></div></div>
 </body>
 </html>
