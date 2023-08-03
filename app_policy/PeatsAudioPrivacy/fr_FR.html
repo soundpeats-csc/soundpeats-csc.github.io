@@ -2,125 +2,807 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title></title>
+
+<link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
+
+@include-when-export url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* pt-serif-regular - latin */
+/* pt-serif-italic - latin */
+/* pt-serif-700 - latin */
+/* pt-serif-700italic - latin */
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #f3f2ee;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+}
+
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+
+html {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+}
+
+html, body {
+	background-color: #f3f2ee;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+
+/*#write {
+	overflow-x: auto;
+    max-width: initial;
+	padding-left: calc(50% - 17em);
+    padding-right: calc(50% - 17em);
+}
+
+@media (max-width: 36em) {
+ 	#write {
+ 		padding-left: 1em;
+    	padding-right: 1em;
+ 	}
+}*/
+
+#write {
+	max-width: 40em;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+			max-width: 914px;
+	}
+}
+
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* styles */
+
+/* ====== */
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 1.875em;
+	/*30 / 16*/
+	line-height: 1.6em;
+	/* 48 / 30*/
+	margin-top: 2em;
+}
+h2,
+h3 {
+	font-size: 1.3125em;
+	/*21 / 16*/
+	line-height: 1.15;
+	/*24 / 21*/
+	margin-top: 2.285714em;
+	/*48 / 21*/
+	margin-bottom: 1.15em;
+	/*24 / 21*/
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.125em;
+	/*18 / 16*/
+	margin-top: 2.67em;
+	/*48 / 18*/
+}
+h5,
+h6 {
+	font-size: 1em;
+	/*16*/
+}
+h1 {
+	border-bottom: 1px solid;
+	margin-bottom: 1.875em;
+	padding-bottom: 0.8125em;
+}
+/* links */
+
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+/* block spacing */
+
+p,
+blockquote,
+.md-fences {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5em;
+}
+/* blockquote */
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+/* lists */
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/* tables */
+.md-meta,.md-before, .md-after {
+	color:#999;
+}
+
+table {
+	margin-bottom: 1.5em;
+	/*24 / 16*/
+	font-size: 1em;
+	/* width: 100%; */
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+code,
+.md-fences {
+	background-color: #dadada;
+}
+
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+/* some fixes */
+
+h1 {
+	line-height: 1.3em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+
+p + ul,
+p + ol{
+	margin-top: .5em;
+}
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.7em;
+	margin-top: calc(1rem - 12px);
+	-webkit-appearance: button;
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+	opacity: 1;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+	background: transparent;
+}
+
+.ty-preferences .window-header {
+	border-bottom: 1px dashed #202B33;
+	box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+	color: #777;
+}
+
+.searchpanel-search-option-btn.active {
+	background: #777;
+	color: white;
+}
+
+.export-detail, .light .export-detail, 
+.light .export-item.active, 
+.light .export-items-list-control {
+	background: #e0e0e0;
+	border-radius: 2px;
+	font-weight: 700;
+	color: inherit
+}
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>PEATSAUDIO_FR</title>
 </head>
-<body><h1 id='accord-de-confidentialité'>Accord de confidentialité</h1>
-<p>  Les présentes conditions d&#39;utilisation s&#39;appliquent à Shenzhen Xingkeqi Innovation Technology Co, Ltd, à ses filiales et à ses sociétés affiliées (collectivement &quot; PeatsAudio &quot;, &quot; l&#39;entreprise &quot; ou &quot; nous &quot;) dans la province de Guangdong, en Chine. En acceptant ces conditions, vous utilisez le service et vous vous conformez à ces conditions ; si vous n&#39;acceptez pas ces conditions, vous devez cesser d&#39;accéder au service ou de l&#39;utiliser.</p>
-<p>  Vous pouvez consulter ces conditions sur la page &quot;Conditions d&#39;utilisation&quot; du service. Nous pouvons modifier les présentes conditions pour tenir compte des modifications apportées au service, des besoins des utilisateurs, de nos priorités commerciales et de l&#39;évolution de la législation et de la réglementation.</p>
-<p>  </p>
-<h2 id='1-enregistrement-du-compte-et-règles-dutilisation'>1. Enregistrement du compte et règles d&#39;utilisation</h2>
-<p>  </p>
-<ul>
-<li><strong>1.1 Enregistrement du compte</strong></li>
-
-</ul>
-<p>  Vous êtes tenu de créer un compte d&#39;application (collectivement, le &quot;compte&quot;). Si vous refusez de fournir ces informations, il se peut que vous ne puissiez pas utiliser le service correctement. Lors de la création d&#39;un compte, il peut vous être demandé de saisir certaines informations, telles que votre nom, votre avatar, votre adresse et votre adresse électronique. Si l&#39;inscription est réussie, vous acceptez d&#39;être entièrement responsable de toutes les activités qui se déroulent sous votre nom d&#39;utilisateur et votre mot de passe.</p>
-<p>  </p>
-<ul>
-<li><strong>1.2 Contenu de l&#39;utilisateur</strong></li>
-
-</ul>
-<p>  Vous pouvez soumettre, publier ou mettre à disposition du contenu sur le Service, qui peut inclure des photos, des questions, des commentaires, des retours d&#39;information sur les produits, etc. Vous reconnaissez et acceptez que vous êtes responsable du contenu que vous publiez. Tout matériel, information ou idée que vous nous transmettez ou que vous publiez par quelque moyen que ce soit est considéré comme non confidentiel. En rendant une publication disponible sur l&#39;un des services, vous nous accordez le droit non exclusif d&#39;utiliser toute publication de quelque manière que ce soit.</p>
-<p>  </p>
-<ul>
-<li><strong>1.3 Soumissions des utilisateurs</strong></li>
-
-</ul>
-<p>  Nous prendrons en considération tout retour d&#39;information, toute idée de produit ou toute caractéristique que vous nous fournirez. Toutefois, vous acceptez de considérer vos messages comme non confidentiels et nous sommes libres d&#39;utiliser les informations à toute fin que nous choisissons, y compris, mais sans s&#39;y limiter, le développement, la fabrication et la commercialisation de produits contenant de telles informations.</p>
-<p>  </p>
-<ul>
-<li><strong>1.4 Annulation par l&#39;utilisateur</strong> </li>
-
-</ul>
-<p>  Le code de sécurité des informations personnelles stipule qu&#39;&quot;après avoir accepté la demande d&#39;annulation du compte, si un traitement manuel est nécessaire, la vérification et le traitement doivent être achevés dans le délai promis (ne dépassant pas quinze jours)&quot;, et &quot;Méthodes de détermination des actes de collecte et d&#39;utilisation illégales et illicites d&#39;informations personnelles par les applications&quot;, après l&#39;annulation, les informations pertinentes concernant le compte, telles que l&#39;adresse électronique et l&#39;avatar, seront supprimées. Si nécessaire, veuillez contacter le service clientèle : <a href='mailto:xiangmu003@soundpeatsaudio.com' target='_blank' class='url'>xiangmu003@soundpeatsaudio.com</a></p>
-<p>  </p>
-<p>  </p>
-<h2 id='2-contenu-du-service'>2. Contenu du service</h2>
-<p>  </p>
-<ul>
-<li><strong>2.1 Envoi d&#39;e-mails réguliers</strong></li>
-
-</ul>
-<p>  À l&#39;adresse électronique que vous fournissez pour le traitement des commandes ou la gestion du compte, nous pouvons envoyer des mises à jour sur vous et vos commandes, en plus de vous envoyer occasionnellement des informations sur nos nouvelles, nos mises à jour et nos produits ou services connexes, y compris de temps en temps des mises à jour de nos conditions et politiques et d&#39;autres nouvelles importantes. Nous pouvons également vous envoyer des communications marketing et promotionnelles susceptibles de vous intéresser.</p>
-<p>  </p>
-<ul>
-<li><strong>2.2 Nos services</strong></li>
-
-</ul>
-<p>  Nous exploitons et fournissons des services, y compris des services d&#39;assistance et d&#39;amélioration, de maintenance et de personnalisation à nos clients. Nous utiliserons vos informations pour comprendre comment les utilisateurs se servent de nos services et pour évaluer et améliorer nos services. En outre, nous utiliserons vos informations pour rechercher, développer et tester de nouveaux services, produits et fonctionnalités, et pour effectuer des activités de dépannage. Nous utilisons également vos informations pour répondre à vos besoins lorsque vous nous contactez.</p>
-<p>  </p>
-<h2 id='3-protection-de-la-vie-privée'>3. Protection de la vie privée</h2>
-<p>  </p>
-<ul>
-<li><strong>3.1 Sécurité et confidentialité</strong></li>
-
-</ul>
-<p>  Nous utiliserons vos informations pour vérifier les détails et l&#39;activité de votre compte. Nous utilisons également vos informations pour promouvoir la sécurité et la confidentialité du service, par exemple pour enquêter sur des activités suspectes ou des violations de nos conditions.</p>
-<p>  </p>
-<ul>
-<li><strong>3.2 Liens avec des tiers</strong></li>
-
-</ul>
-<p>  Nous pouvons, à notre seule discrétion, fournir des liens vers des sites web de tiers sur le Service. Ces sites tiers ont leur propre politique de confidentialité. Veuillez utiliser ces sites web tiers avec prudence. Nous ne sommes pas responsables du contenu et des activités de ces sites tiers.</p>
-<p>  </p>
-<h2 id='4-autorisation-de-lutilisateurinformations-sensibles'>4. Autorisation de l&#39;utilisateur/Informations sensibles</h2>
-<p>  </p>
-<ul>
-<li><strong>4.1 Autorisation des informations de localisation</strong></li>
-
-</ul>
-<p>  L&#39;application doit obtenir des informations sur la localisation de l&#39;utilisateur afin d&#39;obtenir la liste des appareils Bluetooth actuellement connectés pour établir un canal avec le casque Bluetooth. L&#39;emplacement principal à obtenir est la page de connexion des appareils de l&#39;application.</p>
-<p>  </p>
-<ul>
-<li><strong>4.2 Autorisation de la caméra</strong></li>
-
-</ul>
-<p>  Pour modifier l&#39;avatar, envoyer un retour d&#39;information lorsque l&#39;on choisit l&#39;appareil photo pour prendre des photos et télécharger des photos. Principaux points d&#39;accès : page du centre personnel, page de retour d&#39;information.</p>
-<p>  </p>
-<ul>
-<li><strong>4.3 Autorisation de stockage</strong></li>
-
-</ul>
-<p>  Sélectionner un album pour télécharger des photos lors du changement d&#39;avatar ou de l&#39;envoi de commentaires. Principaux points d&#39;accès : page du centre personnel, page de feedback et.</p>
-<p>  </p>
-<ul>
-<li><strong>4.4 Autorisations de lecture de l&#39;état du téléphone portable et de l&#39;identité</strong></li>
-
-</ul>
-<p>  AliMobile Data Analytics SDK demande l&#39;autorisation de lire l&#39;état et l&#39;identité du téléphone portable pour les statistiques et l&#39;analyse du taux d&#39;arrivée de la réception des messages push.</p>
-<p>  </p>
-<ul>
-<li><strong>4.5 Permission de stockage</strong></li>
-
-</ul>
-<p>  Ceci est fait pour mettre en cache les appareils auxquels les écouteurs ont été connectés dans le passé, afin de réduire le nombre de requêtes d&#39;informations des écouteurs via le réseau. Si vous n&#39;autorisez pas, les informations des écouteurs ne seront pas mises en cache.</p>
-<p>  </p>
-<ul>
-<li><strong>4.6 Accès au téléphone</strong></li>
-
-</ul>
-<p>  Après avoir connecté les écouteurs, dans la section &quot;Centre personnel&quot; - &quot;À propos de l&#39;application&quot; - &quot;Nous contacter&quot;, vous pouvez cliquer sur le téléphone pour passer un appel directement.</p>
-<p>  </p>
-<ul>
-<li><strong>4.7 Informations personnelles soumises</strong></li>
-
-</ul>
-<p>  L&#39;application recueillera l&#39;adresse électronique ou l&#39;avatar et le surnom fournis lors de l&#39;inscription, qui sont utilisés pour la création du compte ; dans les commentaires, l&#39;adresse électronique sera demandée, afin de faciliter le contact avec l&#39;auteur du commentaire, de manière à traiter le commentaire plus rapidement.</p>
-<p>  </p>
-<h2 id='5-droits-de-propriété-intellectuelle'>5. Droits de propriété intellectuelle</h2>
-<p>  </p>
-<ul>
-<li>Les droits de propriété intellectuelle du contenu (y compris, mais sans s&#39;y limiter, les logiciels, la technologie, les programmes, les pages web, les textes, les photos, les images, les marques, les logos, l&#39;audio, la vidéo, les graphiques, la mise en page, les documents électroniques, etc. En même temps, les droits d&#39;auteur, les brevets, les marques et les autres droits de propriété intellectuelle du logiciel sur lequel la société fournit des services appartiennent à la société. Sans l&#39;autorisation de la société, personne n&#39;est autorisé à utiliser le logiciel &quot; PeatsAudio &quot; (y compris, mais sans s&#39;y limiter, à surveiller, copier, distribuer, afficher, mettre en miroir, charger et télécharger le contenu du logiciel &quot; PeatsAudio &quot; et des services connexes par l&#39;intermédiaire d&#39;un robot, d&#39;une araignée ou d&#39;un autre programme ou dispositif).</li>
-<li>Il vous est demandé de ne pas utiliser les marques commerciales, les marques de service, les noms commerciaux, les noms de domaine, les noms de site Web ou d&#39;autres caractéristiques distinctives de la marque de l&#39;entreprise, y compris, mais sans s&#39;y limiter, &quot; PeatsAudio.com &quot; (collectivement, les &quot; marques &quot;), quelles que soient les circonstances. &quot;). Vous ne pouvez pas afficher, utiliser ou demander l&#39;enregistrement d&#39;une marque, d&#39;un nom de domaine, etc., de quelque manière que ce soit, seul ou en combinaison, ni adopter un comportement qui suggère expressément ou implicitement à d&#39;autres que vous avez le droit d&#39;afficher, d&#39;utiliser ou de traiter les marques de quelque manière que ce soit sans l&#39;accord écrit préalable de la société. Si vous ne respectez pas cet accord d&#39;utilisation des marques, logos, etc. de la société ou d&#39;autres personnes en raison de la perte, vous en portez l&#39;entière responsabilité juridique.</li>
-
-</ul>
-<p>  </p>
-<h2 id='6-modification-de-laccord'>6. Modification de l&#39;accord</h2>
-<p>  </p>
-<ul>
-<li>PeatsAudio a le droit de modifier les termes de cet accord conformément aux lois et réglementations, aux politiques, aux agences d&#39;État ou aux exigences commerciales de l&#39;entreprise, PeatsAudio l&#39;annoncera sur le site Web par des moyens appropriés.</li>
-<li>Si vous n&#39;êtes pas d&#39;accord avec la modification par PeatsAudio des termes et conditions du présent accord, vous avez le droit de cesser d&#39;utiliser le logiciel &quot;PeatsAudio&quot; et les services associés. Si vous continuez à utiliser le logiciel PeatsAudio et les services associés, vous serez réputé avoir accepté les modifications apportées par PeatsAudio aux termes et conditions du présent contrat.</li>
-
-</ul>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=' first-line-indent'><h1 id='accord-de-confidentialité'><span>Accord de confidentialité</span></h1><p><span>Les présentes conditions d&#39;utilisation s&#39;appliquent à Shenzhen Xingkeqi Innovation Technology Co, Ltd, à ses filiales et à ses sociétés affiliées (collectivement &quot; PeatsAudio &quot;, &quot; l&#39;entreprise &quot; ou &quot; nous &quot;) dans la province de Guangdong, en Chine. En acceptant ces conditions, vous utilisez le service et vous vous conformez à ces conditions ; si vous n&#39;acceptez pas ces conditions, vous devez cesser d&#39;accéder au service ou de l&#39;utiliser.</span></p><p><span>Vous pouvez consulter ces conditions sur la page &quot;Conditions d&#39;utilisation&quot; du service. Nous pouvons modifier les présentes conditions pour tenir compte des modifications apportées au service, des besoins des utilisateurs, de nos priorités commerciales et de l&#39;évolution de la législation et de la réglementation.</span></p><p>&nbsp;</p><h2 id='1-enregistrement-du-compte-et-règles-dutilisation'><span>1. Enregistrement du compte et règles d&#39;utilisation</span></h2><p>&nbsp;</p><ul><li><p><strong><span>1.1 Enregistrement du compte</span></strong></p></li></ul><p><span>Vous êtes tenu de créer un compte d&#39;application (collectivement, le &quot;compte&quot;). Si vous refusez de fournir ces informations, il se peut que vous ne puissiez pas utiliser le service correctement. Lors de la création d&#39;un compte, il peut vous être demandé de saisir certaines informations, telles que votre nom, votre avatar, votre adresse et votre adresse électronique. Si l&#39;inscription est réussie, vous acceptez d&#39;être entièrement responsable de toutes les activités qui se déroulent sous votre nom d&#39;utilisateur et votre mot de passe.</span></p><p>&nbsp;</p><ul><li><p><strong><span>1.2 Contenu de l&#39;utilisateur</span></strong></p></li></ul><p><span>Vous pouvez soumettre, publier ou mettre à disposition du contenu sur le Service, qui peut inclure des photos, des questions, des commentaires, des retours d&#39;information sur les produits, etc. Vous reconnaissez et acceptez que vous êtes responsable du contenu que vous publiez. Tout matériel, information ou idée que vous nous transmettez ou que vous publiez par quelque moyen que ce soit est considéré comme non confidentiel. En rendant une publication disponible sur l&#39;un des services, vous nous accordez le droit non exclusif d&#39;utiliser toute publication de quelque manière que ce soit.</span></p><p>&nbsp;</p><ul><li><p><strong><span>1.3 Soumissions des utilisateurs</span></strong></p></li></ul><p><span>Nous prendrons en considération tout retour d&#39;information, toute idée de produit ou toute caractéristique que vous nous fournirez. Toutefois, vous acceptez de considérer vos messages comme non confidentiels et nous sommes libres d&#39;utiliser les informations à toute fin que nous choisissons, y compris, mais sans s&#39;y limiter, le développement, la fabrication et la commercialisation de produits contenant de telles informations.</span></p><p>&nbsp;</p><ul><li><p><strong><span>1.4 Annulation par l&#39;utilisateur</span></strong><span> </span></p></li></ul><p><span>Le code de sécurité des informations personnelles stipule qu&#39;&quot;après avoir accepté la demande d&#39;annulation du compte, si un traitement manuel est nécessaire, la vérification et le traitement doivent être achevés dans le délai promis (ne dépassant pas quinze jours)&quot;, et &quot;Méthodes de détermination des actes de collecte et d&#39;utilisation illégales et illicites d&#39;informations personnelles par les applications&quot;, après l&#39;annulation, les informations pertinentes concernant le compte, telles que l&#39;adresse électronique et l&#39;avatar, seront supprimées. Si nécessaire, veuillez contacter le service clientèle : </span><a href='mailto:xiangmu003@soundsoundpeats.com' target='_blank' class='url'>xiangmu003@soundsoundpeats.com</a></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='2-contenu-du-service'><span>2. Contenu du service</span></h2><p>&nbsp;</p><ul><li><p><strong><span>2.1 Envoi d&#39;e-mails réguliers</span></strong></p></li></ul><p><span>À l&#39;adresse électronique que vous fournissez pour le traitement des commandes ou la gestion du compte, nous pouvons envoyer des mises à jour sur vous et vos commandes, en plus de vous envoyer occasionnellement des informations sur nos nouvelles, nos mises à jour et nos produits ou services connexes, y compris de temps en temps des mises à jour de nos conditions et politiques et d&#39;autres nouvelles importantes. Nous pouvons également vous envoyer des communications marketing et promotionnelles susceptibles de vous intéresser.</span></p><p>&nbsp;</p><ul><li><p><strong><span>2.2 Nos services</span></strong></p></li></ul><p><span>Nous exploitons et fournissons des services, y compris des services d&#39;assistance et d&#39;amélioration, de maintenance et de personnalisation à nos clients. Nous utiliserons vos informations pour comprendre comment les utilisateurs se servent de nos services et pour évaluer et améliorer nos services. En outre, nous utiliserons vos informations pour rechercher, développer et tester de nouveaux services, produits et fonctionnalités, et pour effectuer des activités de dépannage. Nous utilisons également vos informations pour répondre à vos besoins lorsque vous nous contactez.</span></p><p>&nbsp;</p><h2 id='3-protection-de-la-vie-privée'><span>3. Protection de la vie privée</span></h2><p>&nbsp;</p><ul><li><p><strong><span>3.1 Sécurité et confidentialité</span></strong></p></li></ul><p><span>Nous utiliserons vos informations pour vérifier les détails et l&#39;activité de votre compte. Nous utilisons également vos informations pour promouvoir la sécurité et la confidentialité du service, par exemple pour enquêter sur des activités suspectes ou des violations de nos conditions.</span></p><p>&nbsp;</p><ul><li><p><strong><span>3.2 Liens avec des tiers</span></strong></p></li></ul><p><span>Nous pouvons, à notre seule discrétion, fournir des liens vers des sites web de tiers sur le Service. Ces sites tiers ont leur propre politique de confidentialité. Veuillez utiliser ces sites web tiers avec prudence. Nous ne sommes pas responsables du contenu et des activités de ces sites tiers.</span></p><p>&nbsp;</p><h2 id='4-autorisation-de-lutilisateurinformations-sensibles'><span>4. Autorisation de l&#39;utilisateur/Informations sensibles</span></h2><p>&nbsp;</p><ul><li><p><strong><span>4.1 Autorisation des informations de localisation</span></strong></p></li></ul><p><span>L&#39;application doit obtenir des informations sur la localisation de l&#39;utilisateur afin d&#39;obtenir la liste des appareils Bluetooth actuellement connectés pour établir un canal avec le casque Bluetooth. L&#39;emplacement principal à obtenir est la page de connexion des appareils de l&#39;application.</span></p><p>&nbsp;</p><ul><li><p><strong><span>4.2 Autorisation de la caméra</span></strong></p></li></ul><p><span>Pour modifier l&#39;avatar, envoyer un retour d&#39;information lorsque l&#39;on choisit l&#39;appareil photo pour prendre des photos et télécharger des photos. Principaux points d&#39;accès : page du centre personnel, page de retour d&#39;information.</span></p><p>&nbsp;</p><ul><li><p><strong><span>4.3 Autorisation de stockage</span></strong></p></li></ul><p><span>Sélectionner un album pour télécharger des photos lors du changement d&#39;avatar ou de l&#39;envoi de commentaires. Principaux points d&#39;accès : page du centre personnel, page de feedback et.</span></p><p>&nbsp;</p><ul><li><p><strong><span>4.4 Autorisations de lecture de l&#39;état du téléphone portable et de l&#39;identité</span></strong></p></li></ul><p><span>AliMobile Data Analytics SDK demande l&#39;autorisation de lire l&#39;état et l&#39;identité du téléphone portable pour les statistiques et l&#39;analyse du taux d&#39;arrivée de la réception des messages push.</span></p><p>&nbsp;</p><ul><li><p><strong><span>4.5 Permission de stockage</span></strong></p></li></ul><p><span>Ceci est fait pour mettre en cache les appareils auxquels les écouteurs ont été connectés dans le passé, afin de réduire le nombre de requêtes d&#39;informations des écouteurs via le réseau. Si vous n&#39;autorisez pas, les informations des écouteurs ne seront pas mises en cache.</span></p><p>&nbsp;</p><ul><li><p><strong><span>4.6 Accès au téléphone</span></strong></p></li></ul><p><span>Après avoir connecté les écouteurs, dans la section &quot;Centre personnel&quot; - &quot;À propos de l&#39;application&quot; - &quot;Nous contacter&quot;, vous pouvez cliquer sur le téléphone pour passer un appel directement.</span></p><p>&nbsp;</p><ul><li><p><strong><span>4.7 Informations personnelles soumises</span></strong></p></li></ul><p><span>L&#39;application recueillera l&#39;adresse électronique ou l&#39;avatar et le surnom fournis lors de l&#39;inscription, qui sont utilisés pour la création du compte ; dans les commentaires, l&#39;adresse électronique sera demandée, afin de faciliter le contact avec l&#39;auteur du commentaire, de manière à traiter le commentaire plus rapidement.</span></p><p>&nbsp;</p><h2 id='5-droits-de-propriété-intellectuelle'><span>5. Droits de propriété intellectuelle</span></h2><p>&nbsp;</p><ul><li><p><span>Les droits de propriété intellectuelle du contenu (y compris, mais sans s&#39;y limiter, les logiciels, la technologie, les programmes, les pages web, les textes, les photos, les images, les marques, les logos, l&#39;audio, la vidéo, les graphiques, la mise en page, les documents électroniques, etc. En même temps, les droits d&#39;auteur, les brevets, les marques et les autres droits de propriété intellectuelle du logiciel sur lequel la société fournit des services appartiennent à la société. Sans l&#39;autorisation de la société, personne n&#39;est autorisé à utiliser le logiciel &quot; PeatsAudio &quot; (y compris, mais sans s&#39;y limiter, à surveiller, copier, distribuer, afficher, mettre en miroir, charger et télécharger le contenu du logiciel &quot; PeatsAudio &quot; et des services connexes par l&#39;intermédiaire d&#39;un robot, d&#39;une araignée ou d&#39;un autre programme ou dispositif).</span></p></li><li><p><span>Il vous est demandé de ne pas utiliser les marques commerciales, les marques de service, les noms commerciaux, les noms de domaine, les noms de site Web ou d&#39;autres caractéristiques distinctives de la marque de l&#39;entreprise, y compris, mais sans s&#39;y limiter, &quot; soundpeats.com &quot; (collectivement, les &quot; marques &quot;), quelles que soient les circonstances. &quot;). Vous ne pouvez pas afficher, utiliser ou demander l&#39;enregistrement d&#39;une marque, d&#39;un nom de domaine, etc., de quelque manière que ce soit, seul ou en combinaison, ni adopter un comportement qui suggère expressément ou implicitement à d&#39;autres que vous avez le droit d&#39;afficher, d&#39;utiliser ou de traiter les marques de quelque manière que ce soit sans l&#39;accord écrit préalable de la société. Si vous ne respectez pas cet accord d&#39;utilisation des marques, logos, etc. de la société ou d&#39;autres personnes en raison de la perte, vous en portez l&#39;entière responsabilité juridique.</span></p></li></ul><p>&nbsp;</p><h2 id='6-modification-de-laccord'><span>6. Modification de l&#39;accord</span></h2><p>&nbsp;</p><ul><li><p><span>PeatsAudio a le droit de modifier les termes de cet accord conformément aux lois et réglementations, aux politiques, aux agences d&#39;État ou aux exigences commerciales de l&#39;entreprise, PeatsAudio l&#39;annoncera sur le site Web par des moyens appropriés.</span></p></li><li><p><span>Si vous n&#39;êtes pas d&#39;accord avec la modification par PeatsAudio des termes et conditions du présent accord, vous avez le droit de cesser d&#39;utiliser le logiciel &quot;PeatsAudio&quot; et les services associés. Si vous continuez à utiliser le logiciel PeatsAudio et les services associés, vous serez réputé avoir accepté les modifications apportées par PeatsAudio aux termes et conditions du présent contrat.</span></p></li></ul></div></div>
 </body>
 </html>
