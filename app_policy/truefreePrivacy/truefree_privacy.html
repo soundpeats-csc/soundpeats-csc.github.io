@@ -1,0 +1,911 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
+
+@include-when-export url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* pt-serif-regular - latin */
+/* pt-serif-italic - latin */
+/* pt-serif-700 - latin */
+/* pt-serif-700italic - latin */
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #f3f2ee;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+}
+
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+
+html {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+}
+
+html, body {
+	background-color: #f3f2ee;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+
+/*#write {
+	overflow-x: auto;
+    max-width: initial;
+	padding-left: calc(50% - 17em);
+    padding-right: calc(50% - 17em);
+}
+
+@media (max-width: 36em) {
+ 	#write {
+ 		padding-left: 1em;
+    	padding-right: 1em;
+ 	}
+}*/
+
+#write {
+	max-width: 40em;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+			max-width: 914px;
+	}
+}
+
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* styles */
+
+/* ====== */
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 1.875em;
+	/*30 / 16*/
+	line-height: 1.6em;
+	/* 48 / 30*/
+	margin-top: 2em;
+}
+h2,
+h3 {
+	font-size: 1.3125em;
+	/*21 / 16*/
+	line-height: 1.15;
+	/*24 / 21*/
+	margin-top: 2.285714em;
+	/*48 / 21*/
+	margin-bottom: 1.15em;
+	/*24 / 21*/
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.125em;
+	/*18 / 16*/
+	margin-top: 2.67em;
+	/*48 / 18*/
+}
+h5,
+h6 {
+	font-size: 1em;
+	/*16*/
+}
+h1 {
+	border-bottom: 1px solid;
+	margin-bottom: 1.875em;
+	padding-bottom: 0.8125em;
+}
+/* links */
+
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+/* block spacing */
+
+p,
+blockquote,
+.md-fences {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5em;
+}
+/* blockquote */
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+/* lists */
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/* tables */
+.md-meta,.md-before, .md-after {
+	color:#999;
+}
+
+table {
+	margin-bottom: 1.5em;
+	/*24 / 16*/
+	font-size: 1em;
+	/* width: 100%; */
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+code,
+.md-fences {
+	background-color: #dadada;
+}
+
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+/* some fixes */
+
+h1 {
+	line-height: 1.3em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+
+p + ul,
+p + ol{
+	margin-top: .5em;
+}
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.7em;
+	margin-top: calc(1rem - 12px);
+	-webkit-appearance: button;
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+	opacity: 1;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+	background: transparent;
+}
+
+.ty-preferences .window-header {
+	border-bottom: 1px dashed #202B33;
+	box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+	color: #777;
+}
+
+.searchpanel-search-option-btn.active {
+	background: #777;
+	color: white;
+}
+
+.export-detail, .light .export-detail, 
+.light .export-item.active, 
+.light .export-items-list-control {
+	background: #e0e0e0;
+	border-radius: 2px;
+	font-weight: 700;
+	color: inherit
+}
+
+
+</style><title>en_GB_privacy</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='truefree-privacy-policy'><span>TRUEFREE Privacy Policy</span></h1><p><span>Latest version release date: October 10, 2023</span>
+<span>Welcome to use &quot;TRUEFREE&quot; (referring to TRUEFREE&#39;s products and mobile applications (APP), hereinafter referred to as &quot;TRUEFREE&quot;)! This policy applies to the processing (including collection, use, sharing, transfer, disclosure, etc. etc.) personal information (as defined below).</span>
+<span>We attach great importance to your privacy. In order to better protect your personal information, we recommend that you carefully read the updated &quot;TRUEFREE Privacy Policy&quot; (&quot;this Policy&quot;), especially the terms in bold black, to understand what we will do What information we collect from you and how we will use it, make sure you fully understand and agree before starting to use it. When you agree to this policy, you agree to us processing your relevant information in accordance with this policy. You should not use TRUEFREE unless you have read and accepted all the terms of this policy.</span>
+<span>This policy applies to personal information including but not limited to personal information that you actively provide during the use of TRUEFREE services or that is generated due to product/service needs. However, this policy does not apply to the use of your personal information by third parties. We encourage you to familiarize yourself with the corresponding privacy policies before providing information to such third parties.</span>
+<span>If you have any objections or questions about the terms of this policy, you can communicate with us through the contact information published in Article 10 &quot;How to Contact Us&quot; of this policy.</span>
+<span>This policy will help you understand the following:</span></p><ul><li><ol start='' ><li><p><span>Related definitions</span></p></li></ol></li><li><ol start='2' ><li><p><span>How we collect and use personal information</span></p></li></ol></li><li><ol start='3' ><li><p><span>How we use SDK technology</span></p></li></ol></li><li><ol start='4' ><li><p><span>How we process your personal information</span></p></li></ol></li><li><ol start='5' ><li><p><span>How we store personal information</span></p></li></ol></li><li><ol start='6' ><li><p><span>How we protect your personal information</span></p></li></ol></li><li><ol start='7' ><li><p><span>How we manage your personal information</span></p></li></ol></li><li><ol start='8' ><li><p><span>Protection of minors</span></p></li></ol></li><li><ol start='9' ><li><p><span>Revision and update of this policy</span></p></li></ol></li><li><ol start='10' ><li><p><span>How to contact us</span></p></li></ol></li></ul><ol start='' ><li><p><span>Related definitions</span></p></li></ol><p><span>personal information</span>
+<span>Personal information: Personal information is various information related to an identified or identifiable natural person recorded electronically or by other means, excluding anonymized information.</span>
+<span>Sensitive personal information: refers to personal information that, once leaked or illegally used, may easily cause the dignity of a natural person to be infringed or the personal and property safety to be endangered. This policy includes: personal biometric information (such as voiceprints, static or dynamic facial features, etc.), precise positioning information, personal information of children under 14 years old (inclusive), etc.</span>
+<span>Anonymization</span>
+<span>Through technical processing of personal information, the subject of personal information cannot be identified and cannot be restored after processing.</span>
+<span>De-identification</span>
+<span>It refers to the process of technical processing of personal information so that it cannot be identified or associated with the subject of personal information without the help of additional information.</span></p><h6 id='2-how-we-collect-and-use-personal-information'><span>2. How we collect and use personal information</span></h6><p><span>We process the personal information that you actively provide in the process of using the service or that is generated due to product/service needs in accordance with laws and regulations and follow the principles of legitimacy, legality, necessity, openness, transparency, and &quot;minimization&quot;, and inform you of the relevant personal information. Purpose and scope of use. If we want to use your personal information for other purposes not specified in this policy, or use the collected information for other purposes based on specific purposes, we will promptly notify you in a reasonable manner and inform you again before use. With your consent.</span>
+<span>There are two types of personal information we collect and use:</span>
+<span>Information necessary for basic business functions: This type of information is necessary for the normal operation of the product/service, and you must authorize us to collect it. If you refuse to provide it, you will not be able to use our products/services normally.</span>
+<span>Information that may be collected to expand business functions: This information is information required for non-basic business functions. You can choose whether to authorize us to collect it. If you refuse to provide it, it will result in the inability to implement additional functions or achieve the effects we intend to achieve, but it will not affect your normal use of basic business functions.</span>
+<span>In addition, you understand and agree that we want the products and services we provide you to be perfect, so we will continue to improve our products and services, including technology, which means we may launch new business features from time to time, It may be necessary to collect new personal information or change the purpose or method of using personal information. If a function or product/service that requires the collection of your personal information cannot be explained in this policy, we will update this policy, email, SMS, APP pop-up window, APP notification bar message push, etc. Explain to you the purpose, content, usage and scope of the information collection, provide you with a way to choose your consent, and collect it after obtaining your express consent. During this process, if you have any questions about related matters, you can communicate with us through the contact information published in Article 10 &quot;How to Contact Us&quot; of this policy, and we will answer you as soon as possible.</span>
+<span>We will process the following types of your personal information for the following purposes:</span>
+<strong><span>User registration and login</span></strong>
+<span>When you create an account in TRUEFREE, you will become our member so that we can provide you with membership services. You need to provide (1) mobile phone number and email address; and create (2) user name and (3) password.</span>
+<span>When you use TRUEFREE, in order to maintain your basic information and improve your service experience, you need to choose to fill in and/or complete the information necessary for the service, which may include your email address, mobile phone number, nickname, etc. If you do not provide this information, it will not affect your use of TRUEFREE&#39;s basic business functions. In order to better provide you with after-sales service and firmware upgrade services, we need to collect your TRUEFREE device serial number and TRUEFREE device MAC address. At the same time, we also need to collect your Android ID, because the virtual UUID needs to be used as the unique identifier of the mobile phone&#39;s identity in both buried points and background interface requests.</span>
+<span>When you use TRUEFREE, in order to maintain your basic information and improve your service experience, you need to choose to fill in and/or complete the information necessary for the service, which may include your email address, mobile phone number, nickname, etc. If you do not provide this information, it will not affect your use of TRUEFREE&#39;s basic business functions.</span></p><p><strong><span>Audio playback function</span></strong>
+<span>When you use TRUEFREE for audio playback, we may need to collect your browsing and playback history, collections, etc. generated during your use.</span>
+<span>Provide information display and push of products or services</span>
+<span>During your use of our products/services, in order to provide you with a page display that better meets your needs, we may automatically collect your usage information and store it as web log information, and collect your page clicks and views through tracking. Wait for the specific number and duration of operations and other hidden information.</span>
+<span>We will provide you with advertising push services through banner push on the opening screen and discovery page, and will clearly mark the word &quot;advertisement&quot; on the opening screen and discovery page banners, and place a skip or close button in the upper right corner of the opening screen. Provide users with the option to refuse or turn off push or advertising marketing.</span>
+<span>If you have any questions about our service of recommending advertisements to you based on the foregoing content, you can communicate with us through the contact information published in Article 10 &quot;How to Contact Us&quot; of this policy.</span></p><p><strong><span>notification</span></strong>
+<span>During our operation, we may send various types of notifications through your email, mobile phone text messages, APP pop-ups, APP notification bar message push, etc., for user message notification, identity verification, security verification, user experience research, etc.; In addition, , we may also send you commercial information such as product-related services, functions or activities. If you do not want to accept this information, you can communicate with us through the contact information published in Article 10 &quot;How to Contact Us&quot; of this policy.</span></p><p><strong><span>Improve our services</span></strong>
+<span>In order to better understand your opinions and suggestions on TRUEFREE products/services and improve the quality of our products/services, we may, with your consent, send messages via email, text messages, APP pop-ups, APP notification bar messages, etc. Methods use third-party tools (Survey Monkey) to send/provide you questionnaires, conduct interviews with you, etc. When you fill in the questionnaire/accept the interview, you will be required to provide different categories of personal information depending on the type of questionnaire/interview. If you do not wish to provide the above personal information, you may refuse to complete the questionnaire/accept the interview.</span>
+<span>During your use of our services, in order to identify abnormal account status, understand product suitability, provide you with basic services such as browsing, ensure the normal operation of the service, and optimize the service experience, we may directly or indirectly collect and store information about your use. services and usage information and correlate this information, including log information and device information. In order to collect the above personal device information, we will apply for permission to access your device information.</span>
+<span>In order to conduct data analysis and research and improve the products/services we provide to you, we may collect relevant information when you interact with the TRUEFREE platform. Such information may include: your IP address, APP operation records, mobile phone and headset device information.</span></p><h6 id='app-permission-calling-instructions'><strong><span>APP permission calling instructions</span></strong></h6><p><span>In order to provide you with the services you choose to use, or to ensure the quality and experience of the services, some functions provided by TRUEFREE may require your authorization to enable operating system permissions. If you do not agree to authorize TRUEFREEAPP to obtain relevant operating system permissions, it will not affect your use of the basic business functions we provide (except for the necessary operating system permissions on which the basic business functions depend), but you may not be able to obtain the benefits brought to you by the extended business services. user experience.</span></p><p><strong><span>Bluetooth permissions (Android, iOS versions):</span></strong>
+<span>We need you to authorize us to access your Bluetooth permissions to pair TRUEFREE products with other devices (such as your mobile phone).</span></p><p><strong><span>Camera (camera) permissions (Android, iOS versions):</span></strong>
+<span>If you want to use the AR virtual wearing function provided by TRUEFREE, we need you to authorize us to access your mobile phone camera (camera) and collect your facial information.</span></p><p><strong><span>Album permissions (iOS version):</span></strong>
+<span>We need you to authorize us to access your photo album for the storage of pictures in the AR virtual wearing function.</span></p><p><strong><span>Microphone permissions (Android, iOS versions):</span></strong>
+<span>We need you to authorize us to access your mobile phone microphone and may collect the sound of your voice interaction information. When TRUEFREE executes relevant instructions, it will obtain your voice data, transmit the data back to the third-party account service you selected, and also forward the information you requested. In order to better provide Hear ID services, we also need you to authorize us to access your mobile phone microphone to detect ambient noise when using HearID Sound, HearID ANC, wearing fit detection and other functions to improve the accuracy of the test. .</span></p><p><strong><span>Read and write external storage space permissions (Android version):</span></strong>
+<span>We need you to authorize us to access your read and write external storage space permissions for the storage of images in the AR virtual wearing function.</span></p><p><strong><span>Location Permissions (Android version):</span></strong>
+<span>We need you to grant us access to your location to search for nearby Bluetooth devices. Android 6 and above require location services to be enabled to search for Bluetooth devices.</span></p><p><strong><span>Read call status permission (Android, iOS version):</span></strong>
+<span>We need to obtain the permission to read the call status for a music player (such as white noise player) to monitor the call status of the mobile phone. If music is playing before the incoming call, the music will be paused and music playback will be resumed after the call ends.</span></p><p><strong><span>Get application list permission (Android version):</span></strong>
+<span>We need to obtain the application list permissions for firebase SDK to collect and push messages.</span></p><p><strong><span>Clipboard permissions (Android, iOS versions):</span></strong>
+<span>When you share or receive shared custom EQ information, we will read your clipboard content to determine whether there is a link to implement the function of reading the link. After reading the link, we will pop up a window to prompt you to choose. Whether to load the EQ data in the link, but we will only upload the clipboard content to our server if we locally identify it as TRUEFREE.</span></p><h6 id='instructions-for-continuous-background-running'><span>Instructions for continuous background running</span></h6><p><span>In order to provide the best user experience and functional performance, TRUEFREE may need to run continuously in the background. Here are the specifics:</span>
+<span>Running and stress detection function: When you use the running and stress detection function in the headset device, in order to monitor and feedback your physical performance in real time, TRUEFREE needs to continue running in the background. This is to ensure your health and safety when you exercise or undergo stress testing.</span>
+<span>Adaptive noise control function: When you enable the adaptive noise control function in your headset device, TRUEFREE needs to continuously run in the background in order to monitor environmental noise in real time and perform noise control during your sleep. This is to provide a quiet and comfortable sleeping environment and ensure your sleep quality.</span>
+<span>White noise and meditation functions: When you use the white noise and meditation functions on the TRUEFREE app discovery page, in order to ensure that music playback is not interrupted and provide a continuous relaxation and meditation environment, TRUEFREE needs to continue running in the background.</span>
+<span>Please note that when you turn on any permission, you authorize us to collect and use relevant personal information to provide you with corresponding services. Once you close any permission, you cancel the authorization, and we will no longer continue to collect based on the corresponding permission. and use related personal information, and cannot provide you with services corresponding to this permission. However, your decision to turn off permissions will not affect the previous collection and use of information based on your authorization. Unless you cancel the authorization of personal information necessary for basic business functions, your cancellation of authorization will not affect the use of other functions.</span>
+<span>Please be informed that according to the provisions of laws and regulations, under certain circumstances, the collection and use of your personal information does not require your prior authorization and consent. For specific exceptions, please refer to Section 4 &quot;Exceptions of Authorization and Consent&quot; in Article 4 of this Policy. .</span></p><h6 id='3-how-do-we-use-sdk-technology'><span>3. How do we use SDK technology</span></h6><p><span>In order to ensure the stable operation and function realization of our mobile client and enable you to enjoy and use more services and functions, our application will embed the SDK of third-party partners or other similar applications.</span>
+<span>We will conduct strict security testing on the application programming interface (API) and software tool development kit (SDK) used by third-party partners to obtain relevant information, and agree on strict personal information protection measures with authorized partners to ensure that they comply with this policy and Any other relevant confidentiality and security measures to handle personal information. Please check the attachment &quot;Instructions on the Collection and Use of Information by Third-Party SDKs&quot; at the end of this agreement.</span></p><h6 id='4-how-we-process-your-personal-information'><span>4. How we process your personal information</span></h6><p><span>Joint processing and delegated processing</span>
+<span>You fully understand and agree that when providing you with products or services, we will jointly process and entrust you to process your personal information in the following situations. When the following situations are exceeded, we will separately solicit information from you through the notification method described in Article 9. Your authorization and consent:</span>
+<span>Joint processing: When obtaining your separate consent or subject to the &quot;Exceptions to Authorized Consent&quot; in Section 4 of this Article 4, we may cooperate with third parties who help us operate, analyze, improve, customize, support and market Partners process your information together.</span>
+<span>Entrusted processing: Some specific modules and functions in some of TRUEFREE&#39;s business functions are provided by external suppliers. Third-party partners we entrust to process personal information will only have access to the information necessary to perform their duties, and we will supervise their entrusted processing activities.</span>
+<span>We will only entrust and jointly process your information for the legal, legitimate, necessary, specific, and clear purposes stated in this policy. We will conduct a reasonable review of the personal information security environment of third-party partners and sign strict personal information processing agreements with them to ensure that they can only access the information they need to perform their duties and require them to take adequate protective measures for your information. , strictly abide by relevant laws, regulations and regulatory requirements.</span>
+<span>If the agreement between us and a third-party partner regarding the purpose and method of processing changes and materially affects the original purpose and method of processing, we will obtain your authorization and consent again. If you choose to cancel authorization, we will stop the services corresponding to this permission.</span>
+<span>transfer</span>
+<span>We may transfer your personal information to other companies, organizations or individuals when obtaining your separate consent or subject to the &quot;Exceptions to Authorized Consent&quot; in Section 4 of this Article 4. If a merger, acquisition or bankruptcy liquidation occurs, it may involve the transfer of personal information. In this case, we will require the new company or organization that holds your personal information to continue to be bound by this policy. If there are any changes to the collection and processing of personal information stipulated in this policy, the company or organization will seek your authorization and consent again.</span>
+<span>public</span>
+<span>When obtaining your separate consent or subject to the &quot;Exceptions to Authorized Consent&quot; in Section 4 of this Article 4, we may disclose personal information on the premise of adopting security protection measures that comply with industry standards. For your personal information that is disclosed, we will promptly and carefully review its legitimacy, reasonableness, and legality after receiving the disclosure request, and take the measures described in Article 6 of this policy when and after it is disclosed. To protect.</span>
+<span>Exceptions to Authorized Consent</span>
+<span>Please be aware that according to laws and regulations, your personal information will not be processed without your prior authorization and consent under the following circumstances:</span>
+<span>Directly related to national security and national defense security;</span>
+<span>In response to public health emergencies;</span>
+<span>Directly related to criminal investigation, prosecution, trial and judgment execution, etc.; or in accordance with the requirements of laws and regulations, administrative agencies or public prosecutors and other competent authorities;</span>
+<span>Necessary to protect the life, health and property safety of natural persons in emergency situations, such as to protect your or other individuals&#39; life, property and other major legitimate rights and interests but it is difficult to obtain your consent;</span>
+<span>Personal information is disclosed to the public by you yourself or collected from legally disclosed channels (such as legal news reports, government information disclosure, etc.);</span>
+<span>Necessary to enter into and perform relevant agreements or other written documents with you;</span>
+<span>Necessary to perform legal duties or legal obligations.</span></p><h6 id='5-how-we-store-personal-information'><span>5. How we store personal information</span></h6><p><strong><span>Storage location</span></strong>
+<span>In accordance with the provisions of laws and regulations, we will store your personal information collected and generated during domestic operations within the territory of the People&#39;s Republic of China. Currently, we do not transfer your personal information overseas. However, under the following circumstances, we will provide your personal information to possible overseas entities after fulfilling our obligations under the law:</span></p><ol start='' ><li><p><span>The applicable laws are clearly stipulated;</span></p></li><li><p><span>Obtain your separate consent;</span></p></li><li><p><span>Necessary for the conclusion and performance of cross-border e-commerce transactions and other types of contracts to which you are a party.</span>
+<span>In response to the above situations, we will protect the security of your personal information in accordance with this policy and in accordance with the law.</span>
+<strong><span>Storage Period</span></strong>
+<span>We retain your personal information for the shortest period necessary to provide you with products and services. For example: when you use our registration and membership functions, we need to collect your mobile phone number and collect it after you provide it. While you are using this feature, we need to continue to save your mobile phone number in order to provide you with this feature and ensure the security of your account and system.</span>
+<span>We mainly refer to the following standards when determining the storage period of personal information, whichever is longer:</span>
+<span>Complete the transaction purposes related to you, maintain corresponding transaction and business records, and respond to your possible inquiries or complaints;</span>
+<span>Ensure the safety and quality of the products/services we provide you;</span>
+<span>whether you agree to a longer retention period;</span>
+<span>Whether there are other special agreements on the retention period;</span>
+<span>The necessary period specified by law (for example, the E-Commerce Law stipulates that product and service information and transaction information shall be kept for no less than three years from the date of completion of the transaction).</span>
+<span>beyond the above storage period Afterwards, we will delete or anonymize your personal information unless it meets the circumstances of &quot;Exceptions from Authorized Consent&quot; in Section 4 of Article 4.</span></p></li></ol><h6 id='6-how-we-protect-your-personal-information'><span>6. How we protect your personal information</span></h6><p><span>We have used security measures that comply with industry standards to protect the personal information you provide to prevent unauthorized access, public disclosure, use, modification, damage or loss. We will take all reasonably feasible measures to protect your personal information.</span>
+<span>After an unfortunate personal information security incident occurs, we will promptly inform you in accordance with the requirements of laws and regulations: the basic situation and possible impact of the security incident, the disposal measures we have taken or will take, and the steps you can take to prevent and reduce risks on your own. Suggestions, remedies for you, etc. We will promptly inform you of the incident-related information through email, mobile phone text messages, APP pop-ups, APP notification bar push messages, etc. When it is difficult to notify personal information subjects one by one, we will issue announcements in reasonable and effective ways. At the same time, we will also proactively report the handling of personal information security incidents in accordance with the requirements of regulatory authorities.</span></p><h6 id='7-how-we-manage-your-personal-information'><span>7. How we manage your personal information</span></h6><p><strong><span>Access and Updates</span></strong>
+<span>We encourage you to update and modify your information to make it more accurate and effective. We will take appropriate actions to set up, guide or provide contact channels for submitting applications, and try our best to ensure that you can access, update and correct your information or other information provided when using TRUEFREE.</span>
+<span>If you want to access, update and correct some of your information, you can log in to your personal account and visit your account settings page to view and change your account profile information. You can also contact us through the contact information published in Article 10 &quot;How to Contact Us&quot; of this policy for processing. Unless otherwise provided by laws and regulations, when you correct your personal information, we may not immediately correct or delete the corresponding information from the backup system, but will correct or delete the information when the backup is updated.</span>
+<span>Change the scope of your authorization or consent or withdraw your authorization</span>
+<span>You can change the scope of your authorization for us to continue collecting personal information or withdraw your authorization by deleting information, turning off device functions, etc. You can withdraw all authorization for us to continue collecting your personal information by canceling your account. Please understand that each business function requires some basic personal information to complete. When you withdraw your consent or authorization, we cannot continue to provide you with the services corresponding to the withdrawal of consent or authorization, and we will no longer process your personal information. However, your decision to withdraw your consent or authorization will not affect the previous collection, processing and use of information based on your authorization.</span></p><p><strong><span>Logout and Delete</span></strong>
+<span>We provide you with the functions of canceling and deleting your registered account. Subject to the conditions stipulated in the service agreement and relevant national laws and regulations, you can log in to your personal account and visit your account settings page to delete the account yourself. While your account is logged in, the path to log out is: My – Personal Information – Delete Account. You can also delete your account by submitting a request to </span><a href='mailto:support@itruefree.com' target='_blank' class='url'>support@itruefree.com</a><span> customer service email.</span>
+<span>You can make a request to us to delete personal information under the following circumstances:</span>
+<span>If our processing of personal information violates laws and regulations;</span>
+<span>If we collect and use your personal information without your consent;</span>
+<span>If our processing of personal information violates our agreement with you;</span>
+<span>If you no longer use our products/services, or you cancel your account;</span>
+<span>If we no longer provide products/services to you.</span>
+<span>If we decide to respond to your deletion request, we will also try our best to notify the entities that obtained your personal information from us and request them to delete it in a timely manner, unless otherwise provided by laws and regulations, or these entities obtain your independent authorization. When you or we assist you in deleting relevant information, we may not be able to immediately delete the corresponding information from the backup system due to applicable laws, regulations and security technologies. We will store your personal information securely and will not further process it. Process until the backup can be purged or anonymized.</span></p><p><strong><span>Constraint information system automatic decision-making</span></strong>
+<span>In some business functions, we may only make decisions based on non-human automated decision-making mechanisms including information systems, algorithms, etc. If these decisions significantly affect your legal rights and interests, you have the right to ask us for an explanation, and we will also provide appropriate relief.</span>
+<span>In response to your above request</span>
+<span>We take your every request very seriously. At the same time, you understand and agree that under the circumstances of Section 4 &quot;Exceptions of Authorized Consent&quot; in Article 4, we may not be able to respond to your request in a timely manner.</span></p><h6 id='8-protection-of-minors'><span>8. Protection of Minors</span></h6><p><span>TRUEFREE&#39;s products/services are not intended for use by minors. Minors should obtain the consent of their guardians before using our products/services. If you are a minor, before using our products/services, you should read this policy together under the supervision and guidance of your guardian, and you should use our products/services and submit personal information under the explicit consent and guidance of your guardian. We protect the personal information of minors in accordance with relevant national laws and regulations and will only process the personal information of minors as permitted by laws and regulations and with the explicit consent of their guardians.</span>
+<span>If you are the guardian of a minor, when you have questions about the personal information of the minor under your guardianship, you can communicate with us through the contact information disclosed in Article 10 &quot;How to Contact Us&quot; of this policy. If we discover that we have collected personal information from minors without first obtaining verifiable guardian consent, we will delete the relevant personal information as soon as possible.</span></p><h6 id='9-revisions-and-updates-of-this-policy'><span>9. Revisions and updates of this policy</span></h6><p><span>In order to provide you with better services, we may modify the terms of this policy from time to time based on updates to TRUEFREE products/services and relevant requirements of laws and regulations, and publish any modifications to this policy on this page. Such modifications constitute this policy. a part of. For major changes, we will also provide more prominent notifications (including emails, mobile phone text messages, APP pop-ups, APP notification bar push messages, or other methods). Major changes referred to in this policy include but are not limited to:</span>
+<span>Significant changes to our service model. Such as the purpose of processing personal information, the type of personal information processed, the use of personal information, etc.;</span>
+<span>We have significant changes in our ownership structure. Such as changes in owners caused by business adjustments, bankruptcy mergers, etc.;</span>
+<span>There is a significant change in the main recipients of personal information sharing, transfer or public disclosure;</span>
+<span>There are significant changes in your rights to participate in the processing of personal information and how to exercise them;</span>
+<span>There have been significant changes in our responsible departments, contact information and complaint channels responsible for handling personal information security;</span>
+<span>When the personal information security impact assessment report indicates that there is a high risk;</span>
+<span>Other important situations that may seriously affect your personal rights and interests occur.</span>
+<span>If you do not agree to the changes, you can choose to stop using the TRUEFREE service; if you continue to use the TRUEFREE service, it means that you have fully read, understood and agreed to be bound by the revised policy. Any modifications we make will be made with your satisfaction as our top priority. We encourage you to review this policy each time you use TRUEFREE services.</span>
+<span>We may issue service-related announcements when necessary (for example, when we suspend, change, or terminate a service due to system maintenance). If you do not want to continue to receive push messages from us, you can ask us to stop pushing messages. For example, ask us to stop sending promotional text messages according to the SMS unsubscription guidelines, or set up settings on your mobile device to no longer receive push messages from us; however, Except when we send messages in accordance with legal regulations or service agreements.</span></p><h6 id='10-how-to-contact-us'><span>10. How to contact us</span></h6><p><span>If you have any questions, inquiries or complaints about the content of this policy or privacy protection-related matters when using our services, you can contact us in any of the following ways:</span>
+<span>You can submit feedback online on the TRUEFREE APP function page;</span>
+<span>You can contact us by sending an email to our customer service email address </span><a href='mailto:support@itruefree.com' target='_blank' class='url'>support@itruefree.com</a><span>;</span>
+<span>You can contact us by calling our customer service hotline 1-855-997-4505 (Monday to Friday 9:00-18:30).</span>
+<span>We </span></p></div></div>
+</body>
+</html>
