@@ -3,11 +3,11 @@
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+<link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4, h5 { white-space: pre-wrap; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
@@ -27,7 +27,7 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
 img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
-button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+button, input, select, textarea { color: inherit; font: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
@@ -54,8 +54,8 @@ thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
-.CodeMirror-linenumber { }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
 .CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
@@ -65,7 +65,7 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping pre { white-space: pre; }
 #write pre.ty-contain-cm { white-space: normal; }
 .CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
 .md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
 #write .md-fences.mock-cm { white-space: pre-wrap; }
 .md-fences.md-fences-with-lineno { padding-left: 0px; }
@@ -75,7 +75,7 @@ div.hr:focus { cursor: none; }
 svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
@@ -88,7 +88,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
-  .typora-export * { print-color-adjust: exact; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
@@ -98,7 +98,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
-pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
 p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
 #write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
 p > .md-image:only-child { display: inline-block; width: 100%; }
@@ -136,19 +136,19 @@ a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; 
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
 .md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
-code { text-align: left; }
-a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
 .md-diagram-panel > svg { max-width: 100%; }
 [lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
 [lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom-width: 0px; }
+table tr th { border-bottom: 0px; }
 video { max-width: 100%; display: block; margin: 0px auto; }
 iframe { max-width: 100%; width: 100%; border: none; }
 .highlight td, .highlight tr { border: 0px; }
-mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
 .md-expand mark .md-meta { opacity: 0.3 !important; }
 mark .md-meta { color: rgb(0, 0, 0); }
@@ -160,7 +160,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
 .md-fences.md-fences-math { font-size: 1em; }
 .md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
-.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
 .typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
 .typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
 .typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
@@ -174,7 +174,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
 .outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
 .outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
 .outline-expander:hover::before { content: ""; }
@@ -187,14 +187,14 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
 .outline-label:hover { text-decoration: underline; }
 .outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
-.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
 .outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
 .outline-item-open > .outline-item > .outline-expander::before { content: ""; }
 .outline-children { display: none; }
 .info-panel-tab-wrapper { display: none; }
 .outline-item-open > .outline-children { display: block; }
 .typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
-.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
 .typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
 .typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
 .typora-export-collapse-outline .outline-children { display: none; }
@@ -203,11 +203,25 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
 .md-inline-math-container mjx-container { zoom: 0.95; }
 mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
 
 
 /* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
 
-@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+@include-when-export url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
 
 /* =========== */
 
@@ -799,17 +813,18 @@ input {
 	color: inherit
 }
 
- @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+
 </style><title>SOUNDPEATS_POLICY</title>
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 </head>
-<body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=' first-line-indent'><h1 id='隐私协议'><span>隐私协议</span></h1><p><span>本使用条例适用于中国广东省深圳市星科启创新科技有限公司、其子公司和附属公司（统称“Soundpeats”、“本公司”或“我方”）。如果您接受本条款，即表示您使用本服务并遵守本条款；如果您不接受本条例，那么您必须停止访问或者使用本服务。您可以在本服务中的“使用条款”页面上查阅该条款。我们可能会修改本条款，以反映本服务、用户需求、我们的业务优先级以及法律法规的变更。</span></p><h2 id='1-账户注册'><span>1. 账户注册</span></h2><ul><li><p><strong><span>账户注册</span></strong><span>：您需要创建应用程序帐户（统称“帐户”）或登录的第三方帐户（如 Facebook）。如果您拒绝提供此类信息，则可能无法正常使用本服务。在创建帐户时，系统可能会要求您输入某些信息，例如：您的姓名、头像、年龄、性别、地址、电话号码和电子邮件地址。若注册成功，您同意对在您的用户名和密码下发生的所有活动承担全部责任。</span></p></li></ul><h2 id='2-用户内容和提交'><span>2. 用户内容和提交</span></h2><ul><li><p><strong><span>用户内容</span></strong><span>：您可以在本服务提交、发布或者其他方式提供内容，这些内容包括照片、问题、评论、产品反馈等。您承认和同意对您发布的内容负责。您传输给我们或通过任何方式发布的任何材料、信息或构思，均被视为非机密信息。在本服务中的任何服务上提供发布，即表示您授予我们非专属权利，允许我们以任何方式使用任何发布。</span></p></li><li><p><strong><span>用户提交</span></strong><span>：您提供给我们的反馈信息、产品构思或者有关于产品的功能，我们会进行考究。但是您同意将您发布的内容视为非机密信息，我方可自由选择将信息用于任何目的，包括但不限于开发、制造和营销含有该等信息的产品。</span></p></li></ul><h2 id='3-您的信息用途'><span>3. 您的信息用途</span></h2><ul><li><p><strong><span>发送定期电子邮件</span></strong><span>：对您为处理订单或管理帐户所提供的电子邮箱，我方可能会向该邮箱发送有关您及您订单的更新信息，此外，偶尔还会向您发送有关本公司新闻、更新、相关产品或服务的信息，包括有关我方条款与政策和其他重要消息的不时更新。我方还可能会向您发送我方认为可能与您利益有关的营销和促销通讯。</span></p></li><li><p><strong><span>我方的服务</span></strong><span>：我方运营和提供的服务，包括为客户提供的支持和改进、维修和定制服务。我方将通过您的信息来了解用户如何使用我方的服务，以及评估和改进我方的服务。此外，我方将用到您的信息来研究、开发和测试新型服务、产品及功能，以及执行故障排除活动。在您联系我方时，我方还会用到您的信息来响应您的需求。</span></p></li><li><p><strong><span>安全与隐私</span></strong><span>：我方将用到您的信息来核实帐户详情和活动。我方还会用到您的信息来促进本服务的安全性和隐私性，如调查可疑活动或违反我方条款的行为。</span></p></li><li><p><strong><span>广告和商业信息</span></strong><span>：根据我方收集到有关您的信息（如您已安装、访问、使用和购买过的产品），我方可能会向您和他人显示有关我方产品和第三方产品的广告。</span></p></li></ul><h2 id='4-敏感信息权限获取'><span>4. 敏感信息/权限获取</span></h2><ul><li><p><strong><span>位置信息权限</span></strong><span>：应用需要获取用户位置信息，以获取当前蓝牙连接的设备列表，从而进行与蓝牙耳机通道建立。主要获取位置：应用设备连接页。</span></p></li><li><p><strong><span>相机权限</span></strong><span>：以更换头像、发送意见反馈时选择相机拍照以上传图片。主要获取位置：首页菜单栏、意见反馈页面。</span></p></li><li><p><strong><span>存储权限</span></strong><span>：以更换头像、发送意见反馈时选择相册以选择要上传图片。主要获取位置：首页菜单栏、意见反馈页面。</span></p></li><li><p><strong><span>修改系统设置权限</span></strong><span>：以修改系统音量。主要获取位置：首页-定制tab顶部音量控制。</span></p></li><li><p><strong><span>读取手机状态和身份权限</span></strong><span>：阿里移动数据分析SDK请求读取手机状态和身份权限，以进行推送消息接收到达率统计数据并分析。</span></p></li><li><p><strong><span>存储权限</span></strong><span>：是为了缓存登录页面的那张gif图的，可以减少这张图的网络请求次数，若不授权，则不会缓存图片。</span></p></li><li><p><strong><span>电话获取</span></strong><span>：是连接耳机之后，在首页-帮助-客服电话那边，点击电话可以直接进行播打。</span></p></li></ul><h2 id='5-sdk集成'><span>5. SDK集成</span></h2><ul><li><p><strong><span>APP中集成了华为推送（com.huawei.hms, com.huawei.agconnect）、阿里云推送（com.aliyun） SDK</span></strong><span>，用于消息的推送和通知，无收集/使用个人信息；应用中没有主动请求录音权限;</span></p></li><li><p><strong><span>Bugly</span></strong><span>: </span>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='隐私协议'><span>隐私协议</span></h1><blockquote><p><span>发布日期: 2020年1月16日</span>
+<span>最近更新日期: 2024年2月18日</span>
+<span>本版本生效日期:2024年2月18日</span></p></blockquote><p><span>本使用条例适用于中国广东省深圳市星科启创新科技有限公司、其子公司和附属公司（统称“Soundpeats”、“本公司”或“我方”）。如果您接受本条款，即表示您使用本服务并遵守本条款；如果您不接受本条例，那么您必须停止访问或者使用本服务。您可以在本服务中的“使用条款”页面上查阅该条款。我们可能会修改本条款，以反映本服务、用户需求、我们的业务优先级以及法律法规的变更。</span></p><h2 id='1-账户注册'><span>1. 账户注册</span></h2><ul><li><p><strong><span>账户注册</span></strong><span>：您需要创建应用程序帐户（统称“帐户”）或登录的第三方帐户（如 Facebook）。如果您拒绝提供此类信息，则可能无法正常使用本服务。在创建帐户时，系统可能会要求您输入某些信息，例如：您的姓名、头像、年龄、性别、地址、电话号码和电子邮件地址。若注册成功，您同意对在您的用户名和密码下发生的所有活动承担全部责任。</span></p></li></ul><h2 id='2-用户内容和提交'><span>2. 用户内容和提交</span></h2><ul><li><p><strong><span>用户内容</span></strong><span>：您可以在本服务提交、发布或者其他方式提供内容，这些内容包括照片、问题、评论、产品反馈等。您承认和同意对您发布的内容负责。您传输给我们或通过任何方式发布的任何材料、信息或构思，均被视为非机密信息。在本服务中的任何服务上提供发布，即表示您授予我们非专属权利，允许我们以任何方式使用任何发布。</span></p></li><li><p><strong><span>用户提交</span></strong><span>：您提供给我们的反馈信息、产品构思或者有关于产品的功能，我们会进行考究。但是您同意将您发布的内容视为非机密信息，我方可自由选择将信息用于任何目的，包括但不限于开发、制造和营销含有该等信息的产品。</span></p></li></ul><h2 id='3-您的信息用途'><span>3. 您的信息用途</span></h2><ul><li><p><strong><span>发送定期电子邮件</span></strong><span>：对您为处理订单或管理帐户所提供的电子邮箱，我方可能会向该邮箱发送有关您及您订单的更新信息，此外，偶尔还会向您发送有关本公司新闻、更新、相关产品或服务的信息，包括有关我方条款与政策和其他重要消息的不时更新。我方还可能会向您发送我方认为可能与您利益有关的营销和促销通讯。</span></p></li><li><p><strong><span>我方的服务</span></strong><span>：我方运营和提供的服务，包括为客户提供的支持和改进、维修和定制服务。我方将通过您的信息来了解用户如何使用我方的服务，以及评估和改进我方的服务。此外，我方将用到您的信息来研究、开发和测试新型服务、产品及功能，以及执行故障排除活动。在您联系我方时，我方还会用到您的信息来响应您的需求。</span></p></li><li><p><strong><span>安全与隐私</span></strong><span>：我方将用到您的信息来核实帐户详情和活动。我方还会用到您的信息来促进本服务的安全性和隐私性，如调查可疑活动或违反我方条款的行为。</span></p></li><li><p><strong><span>广告和商业信息</span></strong><span>：根据我方收集到有关您的信息（如您已安装、访问、使用和购买过的产品），我方可能会向您和他人显示有关我方产品和第三方产品的广告。</span></p></li></ul><h2 id='4-敏感信息权限获取'><span>4. 敏感信息/权限获取</span></h2><ul><li><p><strong><span>位置信息权限</span></strong><span>：应用需要获取用户位置信息，以获取当前蓝牙连接的设备列表，从而进行与蓝牙耳机通道建立。主要获取位置：应用设备连接页。</span></p></li><li><p><strong><span>相机权限</span></strong><span>：以更换头像、发送意见反馈时选择相机拍照以上传图片。主要获取位置：首页菜单栏、意见反馈页面。</span></p></li><li><p><strong><span>存储权限</span></strong><span>：以更换头像、发送意见反馈时选择相册以选择要上传图片。主要获取位置：首页菜单栏、意见反馈页面。</span></p></li><li><p><strong><span>修改系统设置权限</span></strong><span>：以修改系统音量。主要获取位置：首页-定制tab顶部音量控制。</span></p></li><li><p><strong><span>读取手机状态和身份权限</span></strong><span>：阿里移动数据分析SDK请求读取手机状态和身份权限，以进行推送消息接收到达率统计数据并分析。</span></p></li><li><p><strong><span>存储权限</span></strong><span>：是为了缓存登录页面的那张gif图的，可以减少这张图的网络请求次数，若不授权，则不会缓存图片。</span></p></li><li><p><strong><span>电话获取</span></strong><span>：是连接耳机之后，在首页-帮助-客服电话那边，点击电话可以直接进行播打。</span></p></li></ul><h2 id='5-sdk集成'><span>5. SDK集成</span></h2><ul><li><p><strong><span>APP中集成了华为推送（com.huawei.hms, com.huawei.agconnect）、阿里云推送（com.aliyun） SDK</span></strong><span>，用于消息的推送和通知，无收集/使用个人信息；应用中没有主动请求录音权限;</span></p></li><li><p><strong><span>Bugly</span></strong><span>: </span>
 <span>收集个人信息的目的：为了实现开发者查看崩溃信息的目的，改进和优化APP的稳定性和性能。</span>
 <span>收集个人信息的方式：通过SDK或API等技术手段收集。</span>
 <span>收集个人信息的范围：收集设备信息、应用信息、崩溃日志等。</span>
 <span>使用个人信息的目的：用于分析和改进APP的稳定性和性能，用于提供开发者查看崩溃信息的服务。</span>
 <span>使用个人信息的方式：通过数据分析和处理等技术手段使用个人信息。</span>
-<span>个人信息的保护：采用加密、匿名化等技术手段，以及合理的安全措施等。</span></p></li></ul><h2 id='6-信息收集和使用'><span>6. 信息收集和使用</span></h2><ul><li><p><strong><span>位置信息</span></strong><span>：当需要进行设备连接时，需要授权定位信息权限，从而获取当前手机连接的蓝牙设备名称，以判断是否为已适配的蓝牙设备，若为已适配设备，将会获取对应MAC地址进行连接，构建设备与APP通讯的通道。除此之外，APP不会获取其他位置相关信息。</span></p></li><li><p><strong><span>存储卡</span></strong><span>：在启动页缓存GIF动图，以减少用户流量使用。更换头像、意见反馈时，获取存储卡中图片，以实现用户通过手机存储卡中的图片进行更换头像或上传意见反馈相关图片。</span></p></li><li><p><strong><span>提交的个人信息</span></strong><span>：app中会收集注册时提供的邮箱或微信头像、昵称信息，用于账户的创建；在意见反馈中，会要求填写邮箱，是为了方便与意见反馈者取得联系，从而更快处理反馈意见。</span></p></li></ul><h2 id='7-第三方链接'><span>7. 第三方链接</span></h2><p><span>我方可自行决定在本服务中提供第三方网站的链接。这些第三方网站都有各自独立的隐私政策。请慎重使用这些第三方网站。对这些第三方网站上的内容和活动，我方概不承担任何责任。</span></p><h2 id='8-所有权'><span>8. 所有权</span></h2><p><span>本服务归 Soundpeats 所有。</span></p><h2><span>9. 用户注销</span></h2><p><span>《个人信息安全规范》规定&quot;受理注销账号请求后，需要人工处理的，应在承诺时限内（不超过十五天）完成核查和处理&quot;， 《App违法违规收集使用个人信息行为认定方法》注销后将会删除账户相关信息，如邮箱、头像都会删除。如有需要请联系客服：</span><a href='mailto:xiangmu003@soundpeatsaudio.com'><span>xiangmu003@soundpeatsaudio.com</span></a></p><h2 id='10-我方隐私政策的变更'><span>10. 我方隐私政策的变更</span></h2><p><span>Soundpeats保留不时修改和更新此隐私政策的权利。所有变更将于我方发布时立即生效，如上文所述，并适用于此后的服务。如果您在变更发布后仍继续使用本服务，即表示您接受变更修改过的条款，因此请定期查看本隐私政策，以了解更新内容。</span></p><p>&nbsp;</p></div></div>
+<span>个人信息的保护：采用加密、匿名化等技术手段，以及合理的安全措施等。</span></p></li></ul><h2 id='6-信息收集和使用'><span>6. 信息收集和使用</span></h2><ul><li><p><strong><span>位置信息</span></strong><span>：当需要进行设备连接时，需要授权定位信息权限，从而获取当前手机连接的蓝牙设备名称，以判断是否为已适配的蓝牙设备，若为已适配设备，将会获取对应MAC地址进行连接，构建设备与APP通讯的通道。除此之外，APP不会获取其他位置相关信息。</span></p></li><li><p><strong><span>存储卡</span></strong><span>：在启动页缓存GIF动图，以减少用户流量使用。更换头像、意见反馈时，获取存储卡中图片，以实现用户通过手机存储卡中的图片进行更换头像或上传意见反馈相关图片。</span></p></li><li><p><strong><span>提交的个人信息</span></strong><span>：app中会收集注册时提供的邮箱或微信头像、昵称信息，用于账户的创建；在意见反馈中，会要求填写邮箱，是为了方便与意见反馈者取得联系，从而更快处理反馈意见。</span></p></li></ul><h2 id='7-第三方链接'><span>7. 第三方链接</span></h2><p><span>我方可自行决定在本服务中提供第三方网站的链接。这些第三方网站都有各自独立的隐私政策。请慎重使用这些第三方网站。对这些第三方网站上的内容和活动，我方概不承担任何责任。</span></p><h2 id='8-所有权'><span>8. 所有权</span></h2><p><span>本服务归 Soundpeats 所有。</span></p><h2 id='9-用户注销'><span>9. 用户注销</span></h2><p><span>《个人信息安全规范》规定&quot;受理注销账号请求后，需要人工处理的，应在承诺时限内（不超过十五天）完成核查和处理&quot;， 《App违法违规收集使用个人信息行为认定方法》注销后将会删除账户相关信息，如邮箱、头像都会删除。如有需要请联系客服：</span><a href='mailto:xiangmu003@soundpeatsaudio.com'><span>xiangmu003@soundpeatsaudio.com</span></a></p><h2 id='10-我方隐私政策的变更'><span>10. 我方隐私政策的变更</span></h2><p><span>Soundpeats保留不时修改和更新此隐私政策的权利。所有变更将于我方发布时立即生效，如上文所述，并适用于此后的服务。如果您在变更发布后仍继续使用本服务，即表示您接受变更修改过的条款，因此请定期查看本隐私政策，以了解更新内容。</span></p><p>&nbsp;</p></div></div>
 </body>
 </html>
