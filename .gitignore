@@ -1,1 +1,82 @@
 .DS_Store
+
+# Android 项目的 .gitignore 文件
+
+# 构建文件
+*.apk
+*.ap_
+*.aab
+
+# Java 类文件
+*.class
+
+# 生成的文件
+bin/
+gen/
+out/
+
+# Gradle 文件
+.gradle/
+build/
+
+# 本地配置文件（sdk 路径等）
+local.properties
+
+# Eclipse 项目文件
+.classpath
+.project
+
+# Android Studio
+*.iml
+.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+
+# 日志文件
+*.log
+
+# Android Studio 导航编辑器临时文件
+.navigation/
+
+# Android Studio captures 文件夹
+captures/
+
+# Keystore 文件
+*.jks
+*.keystore
+
+# 外部原生构建文件夹
+.externalNativeBuild
+.cxx/
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# 版本控制
+vcs.xml
+
+# lint
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+lint/reports/
+
+
