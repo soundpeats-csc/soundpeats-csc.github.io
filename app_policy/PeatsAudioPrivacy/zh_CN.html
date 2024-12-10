@@ -3,7 +3,7 @@
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4, h5 { white-space: pre-wrap; }
@@ -219,848 +219,392 @@ mjx-container { break-inside: avoid; }
 .md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
 
 
-/* 
- *     Typora Theme - Lapis    /    Author - YiNN 
- *     https://github.com/YiNNx/typora-theme-lapis
- */
-
 :root {
-    --text-color: #40464f;
-    /* Text */
-    --primary-color: #4870ac;
-    /* Primary Color */
-    --bg-color: #ffffff;
-    --side-bar-bg-color: var(--bg-color);
-    /* Background */
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
 
-    --marker-color: #a2b6d4;
-    /* List Marker */
-    --highlight-color: #ffffb5c2;
-    /* Highlight */
-    --header-span-color: var(--primary-color);
-    /* h2 Span Color */
-    --block-bg-color: #f6f8fa;
-    /* Block Background */
-    --img-shadow-color: #e3e8f0;
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
 
-    /* Overwrite of Typora Base Color */
-    --search-hit-bg-color: var(--select-text-bg-color);
-    --search-select-bg-color: #5bb3ff;
-    --control-text-hover-color: #a2b6d4;
-    --rawblock-edit-panel-bd: var(--block-bg-color);
-    --item-hover-bg-color: rgb(246 248 250);
-    --active-file-bg-color: var(--block-bg-color);
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
 }
 
 @media print {
-    :root {
-        --text-color: rgb(0, 0, 0);
+    html {
+        font-size: 13px;
     }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: transparent !important;
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
     }
 }
 
-/*
- * Font-face for Cantarell, Source Han Serif CN and JetBrains Mono
- */
-
-/*
- * Basic Style
- */
-
-#write {
-    max-width: 950px;
-    font-size: 1.1rem;
-    color: var(--text-color);
-    line-height: 1.6;
-    word-spacing: 0px;
-    letter-spacing: 0px;
-    word-break: break-word;
-    word-wrap: break-word;
-    text-align: justify;
-
-    font-family: 'Cantarell', 'SourceHanSerifCN', 'JetBrainsMono';
-    margin-bottom: 20rem;
-	
-    /*    下面是新增水印代码 https://blog.csdn.net/msq16021/article/details/124042449*/
-        /* 模式一斜着满屏水印 */
-        background: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='50%25' y='50%25' font-size='18' fill-opacity='0.1' text-anchor='middle' dominant-baseline='middle' transform='rotate(-45, 100 100)'%3ESOUNDPEATS 开发要求%3C/text%3E%3C/svg%3E");
-
+.md-fences {
+	background-color: #f8f8f8;
 }
-
-.searchpanel-search-option-btn {
-    position: absolute;
-    width: 24px;
-    height: 16px;
-    right: 5px;
-    top: 5px;
-    z-index: 99;
-    cursor: pointer;
-    margin-top: 1px;
-    padding: 1px;
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
     border-radius: 3px;
-    line-height: 10px;
-    border: 1px solid #ddd;
-    border-color: var(--active-toggle-btn-color);
+    color: #777777;
+    margin-top: 0 !important;
 }
 
-/* Strong */
-
-#write strong {
-    color: var(--primary-color);
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
 }
 
-/* Link */
-
-#write a {
-    color: var(--primary-color);
+.md-mathjax-midline {
+    background: #fafafa;
 }
 
-#write .md-p a,
-#write .md-heading a {
-    word-wrap: break-word;
-    text-decoration: underline solid;
-    margin: 2px;
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
 }
-
-#write h2.md-heading a {
-    text-decoration: underline;
-    border-bottom: 0;
-    text-decoration-thickness: 1.2px;
-    text-underline-offset: 2px;
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
 }
-
-[md-inline=url],
-[md-inline=link]>.md-content,
-[md-inline=image]>.md-meta {
-    word-break: break-all;
-    font-weight: normal;
-    font-family: 'JetBrainsMono';
-    padding-left: 0.15rem;
-    padding-right: 0rem;
-    color: var(--marker-color);
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
 }
-
-
-/* 
- * TOC
- */
-
-.md-toc-content {
-    font-family: 'SourceHanSerifCN';
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
 }
-
-.md-toc-content:empty:before {
-    color: var(--primary-color);
-}
-
-#write div.md-toc-tooltip {
-    font-family: 'SourceHanSerifCN';
-    color: var(--primary-color);
-    position: static;
-    margin-top: 10px;
-    background-color: var(--block-bg-color);
-    line-height: 1.6rem;
-    padding: 0.3rem 0.75rem;
-    border-top: none;
-    /* border-left: 2px solid var(--primary-color);
-     */
-    border-radius: .5rem;
-}
-
-.md-toc:focus .md-toc-content {
-    border-color: var(--bg-color);
-    margin: 9px -1px;
-    margin-top: 9px;
-}
-
-.md-toc .md-toc-content {
-    border-color: var(--bg-color);
-    margin: 10px 0px;
-    margin-top: 10px;
-}
-
-
-/* mark */
-
-mark {
-    background: var(--highlight-color);
-    padding: 1px .15rem;
-    border-radius: 1px;
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
     color: inherit;
 }
 
-/* 
- * Paragraph
- */
-
-#write+p,
-#write blockquote p {
-    font-size: 1.1rem;
-    padding-top: .2rem;
-    padding-bottom: .2rem;
-    margin: 0;
-    line-height: 1.8rem;
-    color: var(--text-color);
-}
-
-/*
- * Header
- */
-
-#write h4,
-#write h5,
-#write h6 {
-    font-weight: normal;
-}
-
-#write h1,
-#write h2,
-#write h3,
-#write h4,
-#write h5,
-#write h6 {
-    font-family: 'SourceHanSerifCN';
-    padding: 0px;
-    color: var(--primary-color);
-}
-
-#write h1 {
-    text-align: center;
-}
-
-#write h2 {
-    background-color: var(--header-span-color);
-    color: var(--bg-color);
-    padding: 1px 12.5px;
-    border-radius: 4px;
-    display: inline-block;
-}
-
-#write h2 a {
-    color: var(--bg-color);
-    border-bottom-color: var(--bg-color) !important;
-}
-
-#write h2 strong {
-    color: var(--bg-color);
-}
-
-#write h2 code {
-    color: var(--bg-color);
-    background-color: var(--header-span-color);
-}
-
-#write h1 {
-    font-size: 2rem;
-}
-
-#write h2 {
-    font-size: 1.5rem;
-}
-
-#write h3 {
-    font-size: 1.4rem;
-}
-
-#write h4 {
-    font-size: 1.2rem;
-}
-
-#write h5 {
-    font-size: 1.1rem;
-}
-
-#write h6 {
-    font-size: 1.1rem;
-}
-
-#write h1 {
-    padding-top: 0.9rem;
-    margin-bottom: 2.3rem;
-}
-
-#write h2 {
-    margin: .3em 0;
-}
-
-#write h3 {
-    margin: 1em 0 1em;
-}
-
-#write h4 {
-    margin: 0.8em 0 0.8em;
-}
-
-#write h5 {
-    margin: 0.6em 0 0.6em;
-}
-
-#write h6 {
-    margin: 0.4em 0 0.4em;
-}
-
-blockquote h3.md-focus:before,
-blockquote h4.md-focus:before,
-blockquote h5.md-focus:before,
-blockquote h6.md-focus:before {
-    left: -1.3rem;
-}
-
-/*
- * List
- */
-
-::marker {
-    font-weight: bold;
-    color: var(--marker-color);
-}
-
-li.md-list-item {
-    margin: 0.4rem 0;
-}
-
-#write ul,
-#write ol {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding-left: 20px;
-}
-
-#write ul {
-    list-style-type: disc;
-}
-
-#write em {
-    padding: 0 3px 0 0;
-}
-
-#write ul ul {
-    list-style-type: square;
-}
-
-#write ol {
-    list-style-type: decimal;
-}
-
-#write li section {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    line-height: 1.7rem;
-    text-align: justify;
-    color: var(--text-color);
-    font-weight: 500;
-}
-
-/*
- * Quote
- */
-#write blockquote {
-    display: block;
-    font-size: .9em;
-    overflow: auto;
-    border-left: 3px solid var(--primary-color);
-    padding: 15px 30px 15px 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    background: var(--block-bg-color);
-}
-
-/*
- * Inline code
- */
-
-#write code {
-    color: var(--primary-color);
-    font-size: 94%;
-    font-weight: normal;
-    word-wrap: break-word;
-    padding: 2px 4px 2px;
-    border-radius: 3px;
-    margin: 2px;
-    background-color: var(--block-bg-color);
-    font-family: 'JetBrainsMono';
-    word-break: break-all;
-}
-
-/*
- * Img
- */
-
-#write img {
-    margin: 0 auto;
-    max-width: 100%;
-}
-
-#write p>.md-image:only-child:not(.md-img-error) img,
-#write p>img:only-child {
-    filter: drop-shadow(var(--img-shadow-color) 0px 6px 6px);
-    display: block;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-/*
- * Table
- */
-#write table {
-    display: table;
-    text-align: justify;
-    overflow-x: auto;
-    border-collapse: collapse;
-    border-spacing: 0px;
-    font-size: 1em;
-    margin: 0px 0px 20px;
-    width: 100%;
-}
-
-#write tbody {
-    border: 0;
-}
-
-#write table tr {
-    border: 0;
-    border-top: 1px solid #ccc;
-}
-
-#write table tr th,
-#write table tr td {
-    font-size: 1rem;
-    border: 1px solid #d9dfe4;
-    padding: 5px 10px;
-    text-align: justify;
-}
-
-#write table tr th {
-    font-family: SourceHanSerifCN;
-    text-align: center;
-    min-width: 10rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-#write table tr td:hover,
-#write table tr th:hover {
-    background-color: var(--block-bg-color);
-}
-
-table td {
-    min-width: 32px;
-}
-
-.md-table-resize-popover {
-    width: auto !important;
-}
-
-/* Footnote */
-
-sup.md-footnote {
-    background-color: var(--block-bg-color);
-    color: var(--primary-color);
-}
-
-.md-def-name {
-    color: var(--primary-color);
-}
-
-/*
- * Math Script 
- */
-
-.md-inline-math script {
-    color: var(--primary-color);
-}
-
-.md-rawblock-control:not(.md-rawblock-tooltip) {
-    background: var(--bg-color);
-    color: var(--md-char-color);
-}
-
-
-.code-tooltip {
-    box-shadow: none;
-}
-
-.md-rawblock-tooltip.md-rawblock-control {
-    border-radius: 1rem;
-}
-
-.md-rawblock .md-rawblock-tooltip {
-    inset: auto 0.3rem auto auto;
-    transform: translateY(-120%);
-}
-
-/* 
- * Comment
- */
-.md-comment {
-    color: #a8a8a9;
+.md-tag {
+    color: #a7a7a7;
     opacity: 1;
-    font-family: 'JetBrainsMono';
 }
 
-/*
- * Dividing line
- */
-hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
     border: 0;
-    border-top: 2px solid #eef2f5;
-    border-radius: 2px;
 }
 
-/* Checkbox */
-
-#write input[type=checkbox] {
-    width: 0;
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
 }
 
-.task-list-item input::before {
-    content: "";
-    display: inline-block;
-    width: 1.0125rem;
-    height: 1.0125rem;
-    vertical-align: middle;
-    text-align: center;
-    border: 1px solid var(--marker-color);
-    border-radius: 1.2rem;
-    background-color: #fdfdfd;
-    margin-left: -0.1rem;
-    margin-right: 0.1rem;
-    margin-top: -.6rem;
+.ty-preferences .window-content {
+    background-color: #fafafa;
 }
 
-.task-list-item input:checked::before {
-    content: '✓';
-    font-weight: bold;
-    -webkit-text-stroke: 1px var(--primary-color);
-    color: var(--primary-color);
-    background-color: var(--bg-color);
-    font-size: 0.75rem;
-    line-height: 0.8rem;
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
 }
 
-blockquote .task-list-item input::before {
-    margin-top: .2rem;
-}
-
-/*
- * Sidebar
- */
-#typora-sidebar {
-    font-family: 'Cantarell', 'SourceHanSerifCN';
-    height: 100%;
-    color: var(--text-color);
-    font-size: 0.92rem;
-    background-color: var(--bg-color);
-}
-
-#sidebar-content.sidebar-content {
-    margin-top: .5rem;
-}
-
-.html-for-mac #write input[type=checkbox] {
-    margin-top: 0.65rem;
-}
-
-.html-for-mac #write .task-list-item input::before {
-    margin-top: -.85rem;
-}
-
-
-/*
- * Sidebar - FileNode
- */
-
-.active-tab-files #info-panel-tab-file .info-panel-tab-border,
-.active-tab-outline #info-panel-tab-outline .info-panel-tab-border,
-.ty-show-search #info-panel-tab-search .info-panel-tab-border {
-    border-radius: 10px;
-    height: 1px;
-    background-color: var(--primary-color);
-}
-
-.file-node-content {
-    color: var(--primary-color);
-    line-height: 1.6rem;
-}
-
-span.file-node-title-name-part {
-    color: var(--text-color);
-}
-
-span.file-node-title-ext-part {
-    color: var(--text-color);
-}
-
-.file-node-icon {
-    padding-right: 0.2rem;
-}
-
-.file-tree-node.active>.file-node-background {
-    border-left: 4px solid var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-/*
- * Sidebar - Outline
- */
-
-#outline-content {
-    height: 100%;
-    overflow-x: hidden;
-    line-height: 1.6rem;
-    font-size: .96rem;
-}
-
-#outline-content .outline-active,
-.pin-outline .outline-active {
-    color: var(--primary-color);
-}
-
-.outline-item {
-    padding-left: 2em;
-}
-
-.outline-item>.outline-expander:before {
-    transform: translateY(-1px) !important;
-}
-
-/* Meta Block */
-
-pre.md-meta-block {
-    font-family: 'JetBrainsMono';
-    color: var(--primary-color);
-    background: #f6f8fa;
-    padding: 1.5rem;
-    margin: -37px 0rem 3.8rem;
-    /* border-radius: 1rem; */
-    filter: drop-shadow(var(--img-shadow-color) 0px 3px 3px);
-    /* border-top: 1px solid var(--primary-color); */
-    /* border-bottom: 1px solid var(--primary-color); */
-}
-
-pre.md-fences-advanced.md-focus .md-fences-adv-panel {
-    border-radius: .8rem;
-}
-
-/*
- * Scrollbar
- */
-
-#outline-content::-webkit-scrollbar {
-    width: .5rem;
-}
-
-#file-library::-webkit-scrollbar {
-    width: .5rem;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: rgba(179, 179, 179, 0.425);
-}
-
-::-webkit-scrollbar {
-    width: 1rem;
-}
-
-/* 
- * Code Block - Style
- */
-
-.md-fences:before {
-    content: ' ';
-    display: block;
-    width: 100%;
-    background-size: 40px;
-    background-repeat: no-repeat;
-    background-color: #282c34;
-    margin-bottom: -7px;
-    border-radius: 5px;
-    background-position: 10px 10px;
-}
-
-.CodeMirror-wrap .CodeMirror-scroll {
-    overflow-x: auto;
-}
-
-.md-fences .cm-s-inner.CodeMirror {
-    margin: 1.5rem 0;
-}
-
-.cm-s-inner.CodeMirror {
-    padding: 1.2rem .8rem;
-    color: #4f5467;
-    font-family: 'JetBrainsMono';
-    border-radius: 10px;
-    background-color: var(--block-bg-color);
-    /* border: 1px solid #eef2f5;*/
-    line-height: 1.6rem;
-}
-
-.CodeMirror-gutters {
-    border-right: 1px solid #a2b6d452;
-    background: inherit;
-    white-space: nowrap;
-}
-
-pre.CodeMirror-line {
-    padding: 0 1.2rem;
-}
-
-.CodeMirror-linenumber {
-    padding: 0 3px 0 5px;
-    text-align: right;
-    color: var(--primary-color);
-}
-
-/* 
- * Code Block - Color Scheme
- */
-
-.cm-s-inner .cm-keyword {
-    color: #1694b6 !important;
-}
-
-.cm-s-inner .cm-operator {
-    color: #2f86d2 !important;
-}
-
-.cm-s-inner .cm-variable,
-.cm-s-inner .cm-builtin,
-.cm-s-inner .cm-header,
-.cm-s-inner .cm-tag,
-.cm-s-inner .cm-property,
-.cm-s-inner .cm-quote {
-    color: #b9218e !important;
-}
-
-.cm-s-inner .cm-variable-2 {
-    color: #7aadad !important;
-}
-
-.cm-s-inner .cm-variable-3,
-.cm-s-inner .cm-type,
-.cm-s-inner .cm-atom {
-    color: #378ed8 !important;
-}
-
-.cm-s-inner .cm-number {
-    color: #1a5494 !important;
-}
-
-.cm-s-inner .cm-def,
-.cm-s-inner .cm-qualifier {
-    color: #0744ac !important;
-}
-
-.cm-s-inner .cm-string {
-    color: #6f42c2 !important;
-}
-
-.cm-s-inner .cm-string-2 {
-    color: #27638f !important;
-}
-
-.cm-s-inner .cm-comment {
-    color: #9a9a9a !important;
-}
-
-.cm-s-inner .cm-meta {
-    color: #0b93be !important;
-}
-
-.cm-s-inner .cm-attribute {
-    color: #8f6aa8 !important;
-}
-
-.cm-s-inner .cm-error {
-    color: rgba(255, 255, 255, 1) !important;
-    background-color: #b9218e40 !important;
-}
-
-.cm-s-inner .CodeMirror-matchingbracket {
-    text-decoration: underline;
-    color: white !important;
-}
-
-.CodeMirror div.CodeMirror-cursor {
-    border-left: 1px solid var(--primary-color);
-    z-index: 3;
-}
-
-.cm-s-inner div.CodeMirror-selected {
-    background: rgba(167, 178, 189, 0.2) !important;
-}
-
-.cm-s-inner.CodeMirror-focused div.CodeMirror-selected {
-    background: rgba(167, 178, 189, 0.2) !important;
-}
-
-.cm-s-inner .CodeMirror-selected,
-.cm-s-inner .CodeMirror-selectedtext {
-    background-color: rgba(167, 178, 189, 0.0) !important;
-}
-
-.cm-s-inner .CodeMirror-line::-moz-selection,
-.cm-s-inner .CodeMirror-line>span::-moz-selection,
-.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
-    background-color: rgba(167, 178, 189, 0.2);
-}
-
-.cm-s-inner .CodeMirror-line::selection,
-.cm-s-inner .CodeMirror-line>span::selection,
-.cm-s-inner .CodeMirror-line>span>span::selection {
-    background-color: rgba(167, 178, 189, 0.2);
-}
-
-.md-rawblock .md-rawblock-tooltip {
-    inset: auto 0.3rem auto auto;
-    transform: translateY(-120%);
-}
-
-/*
- * Sitting - Unibody
- */
-
-.megamenu-menu-header {
-    border: none;
-    color: var(--text-color);
-}
-
-.megamenu-menu-header #megamenu-back-btn,
-.megamenu-menu-header .megamenu-menu-header-title-back,
-.megamenu-menu-header .megamenu-menu-header-title-menu {
-    color: var(--text-color);
-}
-
-.megamenu-menu {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    box-shadow: none !important;
-}
-
-header,
-#megamenu-content {
-    background-color: var(--bg-color);
-    background-image: none !important;
-}
-
-.md-search-hit {
-    background-color: var(--search-hit-bg-color);
-}
-
-#recent-file-panel tbody tr:nth-child(2n-1) {
-    background-color: var(--recent-file-panel-n-bg-color);
-    color: var(--recent-file-panel-n-color);
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
 }
 
 
@@ -1068,33 +612,38 @@ header,
 </style><title>zh_CN</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='隐私协议'><span>隐私协议</span></h1><blockquote><p><span>发布日期: 2022年1月16日</span>
+<div id='write'  class=''><p><span>发布日期: 2022年1月16日</span>
 <span>最近更新日期: 2024年2月18日</span>
-<span>本版本生效日期: 2024年2月18日</span></p></blockquote><p><span>本使用条例适用于中国广东省深圳市星科启创新科技有限公司、其子公司和附属公司（统称 “PeatsAudio” 、“本公司”或“我方”）。如果您接受本条款，即表示您使用本服务并遵守本条款；如果您不接受本条例，那么您必须停止访问或者使用本服务。</span></p><p><span>您可以在本服务中的“使用条款”页面上查阅该条款。我们可能会修改本条款，以反映本服务、用户需求、我们的业务优先级以及法律法规的变更。</span></p><h2 id='1-账号注册及使用规则'><span>1. 账号注册及使用规则</span></h2><ul><li><p><strong><span>账户注册</span></strong><span>：</span>
-<span>您需要创建应用程序帐户（统称“帐户”）。如果您拒绝提供此类信息，则可能无法正常使用本服务。在创建帐户时，系统可能会要求您输入某些信息，例如：您的姓名、头像、地址和电子邮件地址。若注册成功，您同意对在您的用户名和密码下发生的所有活动承担全部责任。</span></p></li><li><p><strong><span>用户内容</span></strong><span>：</span>
-<span>您可以在本服务提交、发布或者其他方式提供内容，这些内容包括照片、问题、评论、产品反馈等。您承认和同意对您发布的内容负责。您传输给我们或通过任何方式发布的任何材料、信息或构思，均被视为非机密信息。在本服务中的任何服务上提供发布，即表示您授予我们非专属权利，允许我们以任何方式使用任何发布。</span></p></li><li><p><strong><span>用户提交</span></strong><span>：</span>
-<span>您提供给我们的反馈信息、产品构思或者有关于产品的功能，我们会进行考究。但是您同意将您发布的内容视为非机密信息，我方可自由选择将信息用于任何目的，包括但不限于开发、制造和营销含有该等信息的产品。</span></p></li><li><p><strong><span>用户注销</span></strong><span>：</span></p><blockquote><p><span>账号注销流程:【我的】(右下角) &gt; 【设置】 &gt; 【账号与安全】 &gt; 【注销账号】</span></p></blockquote><p><span>《个人信息安全规范》规定&quot;受理注销账号请求后，需要人工处理的，应在承诺时限内（不超过十五天）完成核查和处理&quot;， 《App 违法违规收集使用个人信息行为认定方法》注销后将会删除账户相关信息，如邮箱、头像都会删除。如有需要请联系客服: </span><a href='mailto:xiangmu003@soundsoundpeats.com' target='_blank' class='url'>xiangmu003@soundsoundpeats.com</a></p></li></ul><h2 id='2服务内容'><span>2.服务内容</span></h2><ul><li><p><strong><span>发送定期电子邮件</span></strong><span>：</span>
-<span>对您为处理订单或管理帐户所提供的电子邮箱，我方可能会向该邮箱发送有关您及您订单的更新信息，此外，偶尔还会向您发送有关本公司新闻、更新、相关产品或服务的信息，包括有关我方条款与政策和其他重要消息的不时更新。我方还可能会向您发送我方认为可能与您利益有关的营销和促销通讯。</span></p></li><li><p><strong><span>我方的服务</span></strong><span>：</span>
-<span>我方运营和提供的服务，包括为客户提供的支持和改进、维修和定制服务。我方将通过您的信息来了解用户如何使用我方的服务，以及评估和改进我方的服务。此外，我方将用到您的信息来研究、开发和测试新型服务、产品及功能，以及执行故障排除活动。在您联系我方时，我方还会用到您的信息来响应您的需求</span></p></li></ul><h2 id='3隐私保护'><span>3.隐私保护</span></h2><ul><li><p><strong><span>安全与隐私</span></strong><span>：</span>
-<span>我方将用到您的信息来核实帐户详情和活动。我方还会用到您的信息来促进本服务的安全性和隐私性，如调查可疑活动或违反我方条款的行为。</span></p></li><li><p><strong><span>第三方链接</span></strong><span>：</span>
-<span>我方可自行决定在本服务中提供第三方网站的链接。这些第三方网站都有各自独立的隐私政策。请慎重使用这些第三方网站。对这些第三方网站上的内容和活动，我方概不承担任何责任。</span></p></li></ul><h2 id='4用户授权敏感信息'><span>4.用户授权/敏感信息</span></h2><ul><li><p><strong><span>位置信息权限</span></strong><span>：</span></p><ul><li><p><span>应用需要获取用户位置信息，以获取当前蓝牙连接的设备列表，从而进行与蓝牙耳机通道建立。主要获取位置：应用设备连接页。</span></p></li><li><p><span>应用中使用耳机查询功能时，使用的是百度第三方SDK，其中用途是：提供定位、地图展示，提升服务准确性，以便于查找丢失耳机设备，（百度第三方隐私政策链接：</span><a href='https://lbsyun.baidu.com/index.php?title=openprivacy' target='_blank' class='url'>https://lbsyun.baidu.com/index.php?title=openprivacy</a><span>）</span></p></li></ul></li><li><p><strong><span>相机权限</span></strong><span>：</span>
-<span>以更换头像、发送意见反馈时选择相机拍照以上传图片。主要获取位置：个人中心页面、意见反馈页面。</span></p></li><li><p><strong><span>存储权限</span></strong><span>：</span>
-<span>以更换头像、发送意见反馈时选择相册以选择要上传图片。主要获取位置：个人中心页、意见反馈页面。</span></p></li><li><p><strong><span>读取手机状态和身份权限</span></strong><span>：</span>
-<span>阿里移动数据分析 SDK 请求读取手机状态和身份权限，以进行推送消息接收到达率统计数据并分析。</span></p></li><li><p><strong><span>存储权限</span></strong><span>：</span>
-<span>是为了缓存耳机连接过的历史设备，可以减少耳机信息的网络请求次数，若不授权，则不会缓存耳机信息。</span></p></li><li><p><strong><span>电话获取</span></strong><span>：</span>
-<span>是连接耳机之后，在个人中心-关于APP-联系我们，点击电话可以直接进行播打</span></p></li><li><p><strong><span>提交的个人信息</span></strong><span>：</span>
-<span>APP 中会收集注册时提供的邮箱、头像、昵称信息，用于账户的创建；在意见反馈中，会要求填写邮箱，是为了方便与意见反馈者取得联系，从而更快处理反馈意见。</span></p></li></ul><h2 id='5-sdk-集成'><span>5. SDK 集成</span></h2><ul><li><p><strong><span>Bugly</span></strong><span>: </span>
+<span>本版本生效日期: 2024年2月18日</span></p><p><span>本使用条例适用于中国广东省深圳市星科启创新科技有限公司、其子公司和附属公司（统称“PeatsAudio”、“本公司”或“我方”）。如果您接受本条款，即表示您使用本服务并遵守本条款；如果您不接受本条例，那么您必须停止访问或者使用本服务。</span>
+<span>您可以在本服务中的“使用条款”页面上查阅该条款。我们可能会修改本条款，以反映本服务、用户需求、我们的业务优先级以及法律法规的变更。</span></p><p><span>一、 账号注册及使用规则</span></p><p><span>1.1 账户注册</span>
+<span>您需要创建应用程序帐户（统称“帐户”）。如果您拒绝提供此类信息，则可能无法正常使用本服务。在创建帐户时，系统可能会要求您输入某些信息，例如：您的姓名、头像、地址和电子邮件地址。若注册成功，您同意对在您的用户名和密码下发生的所有活动承担全部责任。</span></p><p><span>1.2用户内容</span>
+<span>您可以在本服务提交、发布或者其他方式提供内容，这些内容包括照片、问题、评论、产品反馈等。您承认和同意对您发布的内容负责。您传输给我们或通过任何方式发布的任何材料、信息或构思，均被视为非机密信息。在本服务中的任何服务上提供发布，即表示您授予我们非专属权利，允许我们以任何方式使用任何发布。</span></p><p><span>1.3用户提交</span>
+<span>您提供给我们的反馈信息、产品构思或者有关于产品的功能，我们会进行考究。但是您同意将您发布的内容视为非机密信息，我方可自由选择将信息用于任何目的，包括但不限于开发、制造和营销含有该等信息的产品。</span></p><p><span>1.4用户注销</span></p><p><span>注销流程:【我的】(右下角) &gt; 【设置】 &gt; 【账号与安全】 &gt; 【注销账号】</span></p><p><span>《个人信息安全规范》规定&quot;受理注销账号请求后，需要人工处理的，应在承诺时限内（不超过十五天）完成核查和处理&quot;， 《App违法违规收集使用个人信息行为认定方法》注销后将会删除账户相关信息，如邮箱、头像都会删除。如有需要请联系客服: </span><a href='mailto:xiangmu003@soundpeatsaudio.com' target='_blank' class='url'>xiangmu003@soundpeatsaudio.com</a></p><p><span>二、服务内容</span></p><p><span>2.1发送定期电子邮件</span>
+<span>对您为处理订单或管理帐户所提供的电子邮箱，我方可能会向该邮箱发送有关您及您订单的更新信息，此外，偶尔还会向您发送有关本公司新闻、更新、相关产品或服务的信息，包括有关我方条款与政策和其他重要消息的不时更新。我方还可能会向您发送我方认为可能与您利益有关的营销和促销通讯。</span></p><p><span>2.2我方的服务</span>
+<span>我方运营和提供的服务，包括为客户提供的支持和改进、维修和定制服务。我方将通过您的信息来了解用户如何使用我方的服务，以及评估和改进我方的服务。此外，我方将用到您的信息来研究、开发和测试新型服务、产品及功能，以及执行故障排除活动。在您联系我方时，我方还会用到您的信息来响应您的需求</span></p><p><span>三、隐私保护</span></p><p><span>3.1安全与隐私</span>
+<span>我方将用到您的信息来核实帐户详情和活动。我方还会用到您的信息来促进本服务的安全性和隐私性，如调查可疑活动或违反我方条款的行为。</span></p><p><span>3.2第三方链接</span>
+<span>我方可自行决定在本服务中提供第三方网站的链接。这些第三方网站都有各自独立的隐私政策。请慎重使用这些第三方网站。对这些第三方网站上的内容和活动，我方概不承担任何责任。</span></p><p><span>四、用户授权/敏感信息</span></p><p><span>4.1位置信息权限</span>
+<span>应用需要获取用户位置信息，以获取当前蓝牙连接的设备列表，从而进行与蓝牙耳机通道建立。主要获取位置：应用设备连接页。</span></p><p><span>应用中使用耳机查询功能时，使用的是百度第三方SDK，其中用途是：提供定位、地图展示，提升服务准确性，以便于查找丢失耳机设备，（百度第三方隐私政策链接：</span><a href='https://lbsyun.baidu.com/index.php?title=openprivacy' target='_blank' class='url'>https://lbsyun.baidu.com/index.php?title=openprivacy</a><span>）</span></p><p><span>4.2相机权限</span>
+<span>以更换头像、发送意见反馈时选择相机拍照以上传图片。主要获取位置：个人中心页面、意见反馈页面。</span></p><p><span>4.3存储权限</span>
+<span>以更换头像、发送意见反馈时选择相册以选择要上传图片。主要获取位置：个人中心页、意见反馈页面。</span></p><p><span>4.4读取手机状态和身份权限</span>
+<span>阿里移动数据分析SDK请求读取手机状态和身份权限，以进行推送消息接收到达率统计数据并分析。</span></p><p><span>4.5存储权限</span>
+<span>是为了缓存耳机连接过的历史设备，可以减少耳机信息的网络请求次数，若不授权，则不会缓存耳机信息。</span></p><p><span>4.6电话获取</span>
+<span>是连接耳机之后，在个人中心-关于APP-联系我们，点击电话可以直接进行播打</span></p><p><span>4.7提交的个人信息</span>
+<span>app中会收集注册时提供的邮箱、头像、昵称信息，用于账户的创建；在意见反馈中，会要求填写邮箱，是为了方便与意见反馈者取得联系，从而更快处理反馈意见。</span></p><p><span>五. SDK 集成</span>
+<span>5.1 Bugly:</span>
 <span>收集个人信息的目的：为了实现开发者查看崩溃信息的目的，改进和优化APP的稳定性和性能。</span>
 <span>收集个人信息的方式：通过SDK或API等技术手段收集。</span>
 <span>收集个人信息的范围：收集设备信息、应用信息、崩溃日志等。</span>
 <span>使用个人信息的目的：用于分析和改进APP的稳定性和性能，用于提供开发者查看崩溃信息的服务。</span>
 <span>使用个人信息的方式：通过数据分析和处理等技术手段使用个人信息。</span>
-<span>个人信息的保护：采用加密、匿名化等技术手段，以及合理的安全措施等。</span></p></li><li><p><strong><span>百度地图定位SDK：</span></strong>
+<span>个人信息的保护：采用加密、匿名化等技术手段，以及合理的安全措施等。</span></p><p><span>5.2 百度地图定位SDK：</span>
 <span>收集个人信息的目的：记录耳机最后使用的位置。</span>
 <span>收集个人信息的方式：通过SDK或API等技术手段收集。</span>
 <span>收集个人信息的范围：收集设备经纬度。</span>
 <span>使用个人信息的目的：耳机查找功能，用于在地图上对耳机最后使用位置标点，以实现耳机查找功能。</span>
 <span>使用个人信息的方式：通过数据分析和处理等技术手段使用个人信息。</span>
-<span>个人信息的保护：采用加密、匿名化等技术手段，以及合理的安全措施等。</span></p></li></ul><h2 id='6-知识产权'><span>6. 知识产权</span></h2><ul><li><p><span>本公司在 “PeatsAudio” 软件及相关服务中提供的内容（包括但不限于软件、技术、程序、网页、文字、图片、图像、商标、标识、音频、视频、图表、版面设计、电子文档等）的知识产权属于本公司所有。同时本公司提供服务所依托的软件的著作权、专利权、商标及其他知识产权均归本公司所有。未经本公司许可，任何人不得擅自使用（包括但不限于通过任何机器人、蜘蛛等程序或设备监视、复制、传播、展示、镜像、上载、下载 “PeatsAudio” 软件及相关服务中的内容）。</span></p></li><li><p><span>请您在任何情况下都不要私自使用公司的包括但不限于“ soundpeats.com ”等在内的任何商标、服务标记、商号、域名、网站名称或其他显著品牌特征等（以下统称为“标识”）。未经公司事先书面同意，您不得将本条款前述标识以单独或结合任何方式展示、使用或申请注册商标、进行域名注册等，也不得实施向他人明示或暗示有权展示、使用、或其他有权处理该些标识的行为。由于您违反本协议使用公司上述商标、标识等给公司或他人造成损失的，由您承担全部法律责任。</span></p></li></ul><h2 id='7-协议修改'><span>7. 协议修改</span></h2><ul><li><p><span>PeatsAudio 有权根据法律法规政策、国家有权机构或公司经营要求修改本协议的有关条款，PeatsAudio 将会通过适当方式在网站上予以公示。</span></p></li><li><p><span>若您不同意 PeatsAudio 对本协议相关条款所做的修改，您有权停止使用 ”PeatsAudio” 软件及相关服务。如果您继续使用”PeatsAudio”软件及相关服务，则视为您接受 PeatsAudio 对本协议相关条款所做的修改。</span></p></li></ul></div></div>
+<span>个人信息的保护：采用加密、匿名化等技术手段，以及合理的安全措施等。</span></p><p><span>六、知识产权</span></p><p><span>6.1 本公司在“PeatsAudio”软件及相关服务中提供的内容（包括但不限于软件、技术、程序、网页、文字、图片、图像、商标、标识、音频、视频、图表、版面设计、电子文档等）的知识产权属于本公司所有。同时本公司提供服务所依托的软件的著作权、专利权、商标及其他知识产权均归本公司所有。未经本公司许可，任何人不得擅自使用（包括但不限于通过任何机器人、蜘蛛等程序或设备监视、复制、传播、展示、镜像、上载、下载“PeatsAudio”软件及相关服务中的内容）。</span>
+<span>6.2 请您在任何情况下都不要私自使用公司的包括但不限于“ soundpeats.com ”等在内的任何商标、服务标记、商号、域名、网站名称或其他显著品牌特征等（以下统称为“标识”）。未经公司事先书面同意，您不得将本条款前述标识以单独或结合任何方式展示、使用或申请注册商标、进行域名注册等，也不得实施向他人明示或暗示有权展示、使用、或其他有权处理该些标识的行为。由于您违反本协议使用公司上述商标、标识等给公司或他人造成损失的，由您承担全部法律责任。</span></p><p><span>七、协议修改</span></p><p><span>7.1 PeatsAudio有权根据法律法规政策、国家有权机构或公司经营要求修改本协议的有关条款，PeatsAudio将会通过适当方式在网站上予以公示。</span>
+<span>7.2 若您不同意PeatsAudio对本协议相关条款所做的修改，您有权停止使用”PeatsAudio”软件及相关服务。如果您继续使用”PeatsAudio”软件及相关服务，则视为您接受PeatsAudio对本协议相关条款所做的修改。</span></p></div></div>
 </body>
 </html>
