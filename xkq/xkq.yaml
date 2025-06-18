@@ -18,7 +18,7 @@ proxies:
     udp: true
   
   # SSR 服务器
-  - name: "🇯🇵日本-ssr"
+  - name: "🇯🇵日本-大阪"
     type: ssr
     server: vps-jp.soundpeatsx.com
     port: 8388
@@ -47,7 +47,7 @@ proxy-groups:
     proxies:
       - "自动选择"
       - "🇯🇵日本-Trojan"
-      - "🇯🇵日本-ssr"
+      - "🇯🇵日本-大阪"
       - "🇺🇸美国-Trojan"
       - "🇺🇸美国-低速节点(备用)"
       - "DIRECT"
